@@ -1,4 +1,5 @@
 import React from 'react';
+import s from './Input.module.css';
 
 type InputProps = {
     placeholder?: string,
@@ -16,6 +17,7 @@ const Input = ({placeholder, onChange} : InputProps) => {
     return (
         <label>
             <input
+                className={s.input}
                 placeholder={placeholder}
                 onChange={handleOnChange}
             />

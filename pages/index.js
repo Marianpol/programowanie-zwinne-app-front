@@ -1,4 +1,6 @@
 import Head from 'next/head'
+import Button from '../components/ui/Button'
+import Input from '../components/ui/Input'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
@@ -13,6 +15,10 @@ export default function Home() {
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
+
+        <Input
+          placeholder="Telefon"/>
+        <Button text="Looo"/>
 
         <p className={styles.description}>
           Get started by editing{' '}
