@@ -1,0 +1,35 @@
+.smallSize {
+  font-size: 12px;
+}
+
+.mediumSize {
+  font-size: 16px;
+}
+
+.largeSize {
+  font-size: 24px;
+}
+
+.regularWeight {
+  font-weight: 400;
+}
+
+.mediumWeight {
+  font-weight: 500;
+}
+
+.semiBoldWeight {
+  font-weight: 600;
+}
+
+.boldWeight {
+  font-weight: 700;
+}
+
+.primaryColor {
+  color: var(--primary-color);
+}
+
+.upperCase {
+  text-transform: uppercase;
+}
