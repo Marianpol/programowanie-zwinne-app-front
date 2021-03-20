@@ -15,13 +15,13 @@ const Input = ({placeholder, onChange} : InputProps) => {
     }
 
     return (
-        <label>
+        <>
             <input
                 className={s.input}
                 placeholder={placeholder}
                 onChange={handleOnChange}
             />
-        </label>
+        </>
     )
 }
 

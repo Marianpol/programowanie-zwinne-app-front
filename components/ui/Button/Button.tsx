@@ -2,19 +2,19 @@ import React from 'react';
 import s from './Button.module.css';
 
 type ButtonProps = {
-    text: string,
     disabled: boolean,
     onClick?: () => void,
+    children: string,
 }
 
-const Button = ({text, disabled, onClick} : ButtonProps) => {
+const Button = ({disabled, onClick, children} : ButtonProps) => {
     return (
         <>
             <button
                 className={s.button}
                 disabled={disabled}
                 >
-                    {text}
+                    {children}
             </button>
         </>
     )
