@@ -1,6 +1,6 @@
 import React from 'react';
-import Input from '../ui/Input';
-import Button from '../ui/Button';
+import Input from 'app/ui/components/Input';
+import Button from 'app/ui/components/Button';
 import s from './Login.module.css';
 
 const Login = () => {
