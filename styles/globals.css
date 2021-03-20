@@ -1,3 +1,9 @@
+:root {
+  --green: #00AB55;
+  --green-hover: #009048;
+  --grey-light: #D3D3D3;
+}
+
 html,
 body {
   padding: 0;
