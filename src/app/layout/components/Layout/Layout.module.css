@@ -1,0 +1,28 @@
+.root {
+  min-height: 100vh;
+  display: flex;
+}
+
+.content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  padding: 64px;
+  background-image: url("../../../../../public/background.jpg");
+  background-position: center;
+  background-size: cover;
+  z-index: 0;
+}
+
+.content::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.6);
+  z-index: -1;
+}
