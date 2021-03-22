@@ -1,3 +1,7 @@
+.verySmallSize {
+  font-size: 10px;
+}
+
 .smallSize {
   font-size: 12px;
 }
@@ -28,6 +32,10 @@
 
 .primaryColor {
   color: var(--primary-color);
+}
+
+.whiteColor {
+  color: #fff;
 }
 
 .upperCase {

@@ -1,0 +1,13 @@
+.root {
+  background-color: #00ab55;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text {
+  color: #fff;
+}

@@ -1,0 +1,14 @@
+.root {
+  padding: 3px 6px;
+  border-radius: 5px;
+  text-align: center;
+  width: 90px;
+}
+
+.success {
+  background-color: #00ab55;
+}
+
+.error {
+  background-color: #d81f28;
+}
