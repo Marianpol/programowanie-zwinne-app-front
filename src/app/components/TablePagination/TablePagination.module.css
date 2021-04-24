@@ -1,0 +1,19 @@
+.root {
+  display: flex;
+  justify-content: flex-end;
+  padding: 16px;
+  border-top: 1px solid #f3f3f3;
+}
+
+.arrows {
+}
+
+.amountOfElements {
+  display: flex;
+  align-items: center;
+  margin-right: 24px;
+}
+
+.arrow {
+  transform: rotateY(-180deg);
+}

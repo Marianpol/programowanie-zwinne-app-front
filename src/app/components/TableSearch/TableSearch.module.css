@@ -1,0 +1,26 @@
+.label {
+  position: relative;
+}
+
+.input {
+  width: 100%;
+  border: 1px solid #e6e6e6;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.02), 0 3px 6px rgba(0, 0, 0, 0.04);
+  border-radius: 5px;
+  padding: 16px 16px 16px 42px;
+  outline: none;
+  font-size: 16px;
+  color: var(--primary-color);
+}
+
+.input::placeholder {
+  color: #d3d3d3;
+  font-family: "Be Vietnam";
+}
+
+.icon {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+}

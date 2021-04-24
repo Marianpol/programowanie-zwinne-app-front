@@ -8,6 +8,7 @@ export interface TextProps {
   size?: "very-small" | "small" | "medium" | "large";
   weight?: "regular" | "medium" | "semi-bold" | "bold";
   color?: "primary" | "white";
+  align?: "left" | "center" | "right";
   upperCase?: boolean;
 }
 
@@ -16,6 +17,7 @@ const Text = ({
   size = "medium",
   weight = "regular",
   color = "primary",
+  align = "left",
   className,
   upperCase,
 }: TextProps) => {
@@ -30,6 +32,9 @@ const Text = ({
     [s.boldWeight]: weight === "bold",
     [s.primaryColor]: color === "primary",
     [s.whiteColor]: color === "white",
+    [s.leftTextAlign]: align === "left",
+    [s.rightTextAlign]: align === "right",
+    [s.centerTextAlign]: align === "center",
     [s.upperCase]: upperCase,
   });
   return <div className={rootClassName}>{children}</div>;

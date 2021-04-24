@@ -1,10 +1,4 @@
-import Document, {
-  DocumentContext,
-  Html,
-  Head,
-  Main,
-  NextScript,
-} from "next/document";
+import Document, { DocumentContext, Html, Head, Main, NextScript } from "next/document";
 
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
@@ -18,7 +12,7 @@ class MyDocument extends Document {
       <Html>
         <Head>
           <link
-            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Be+Vietnam:wght@200;400;500;600;700&display=swap"
             rel="stylesheet"
           />
         </Head>

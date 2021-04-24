@@ -1,7 +1,11 @@
 export default interface Columns {
   id: string;
-  label: string;
+  label?: string;
   accessor: string;
-  type?: "label";
-  format?: "date";
+  options?: {
+    width?: string;
+    avatarAccessor?: string;
+    type?: "label" | "action";
+    format?: "date";
+  };
 }

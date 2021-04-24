@@ -1,14 +1,13 @@
 .root {
   padding: 3px 6px;
   border-radius: 5px;
-  text-align: center;
   width: 90px;
 }
 
 .success {
-  background-color: #00ab55;
+  background-image: linear-gradient(180deg, #00ab55 0%, #167344 100%);
 }
 
 .error {
-  background-color: #d81f28;
+  background-image: linear-gradient(180deg, #d81f28 0%, #7a1419 100%);
 }

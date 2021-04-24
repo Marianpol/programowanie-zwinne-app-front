@@ -1,11 +1,6 @@
 .root {
+  position: relative;
   display: flex;
   justify-content: space-between;
-  height: 10%;
-}
-
-.header {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  height: 50px;
 }

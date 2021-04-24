@@ -17,7 +17,7 @@ const Label = ({ status }: LabelProps) => {
   const rootClassName = clsx(s.root, { [s.success]: status, [s.error]: !status });
   return (
     <div className={rootClassName}>
-      <Text size="very-small" upperCase weight="medium" color="white">
+      <Text size="very-small" upperCase weight="medium" color="white" align="center">
         {getLabelTitle(status)}
       </Text>
     </div>

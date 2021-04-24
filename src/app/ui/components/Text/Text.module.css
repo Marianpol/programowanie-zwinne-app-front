@@ -38,6 +38,18 @@
   color: #fff;
 }
 
+.leftTextAlign {
+  text-align: left;
+}
+
+.rightTextAlign {
+  text-align: right;
+}
+
+.centerTextAlign {
+  text-align: center;
+}
+
 .upperCase {
   text-transform: uppercase;
 }

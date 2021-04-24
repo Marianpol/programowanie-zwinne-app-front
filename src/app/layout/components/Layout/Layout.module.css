@@ -1,5 +1,5 @@
 .root {
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
 }
 
@@ -7,7 +7,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  width: 80%;
+  width: 100%;
   padding: 64px;
   background-image: url("../../../../../public/background.jpg");
   background-position: center;
