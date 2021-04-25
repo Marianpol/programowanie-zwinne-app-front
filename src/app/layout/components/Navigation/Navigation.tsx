@@ -18,10 +18,10 @@ export const navigation: Navigation[] = [
 ];
 
 const Navigation = () => {
-  const { pathname } = useRouter();
+  const { asPath } = useRouter();
 
   const getListItemClassName = (href: string) =>
-    clsx(s.listItem, { [s.listItemActive]: href === pathname });
+    clsx(s.listItem, { [s.listItemActive]: href === asPath });
 
   return (
     <nav className={s.nav}>

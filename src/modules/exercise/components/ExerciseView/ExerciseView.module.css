@@ -1,0 +1,22 @@
+.root {
+  display: flex;
+  height: 100%;
+}
+
+.leftSide {
+  width: 75%;
+  margin-right: 16px;
+}
+
+.rightSide {
+  width: 25%;
+}
+
+.files {
+  height: 50%;
+}
+
+.participants {
+  height: calc(50% - 16px);
+  margin-bottom: 16px;
+}

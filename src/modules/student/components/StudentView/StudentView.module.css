@@ -1,0 +1,21 @@
+.root {
+  display: flex;
+  height: 100%;
+}
+
+.leftSide {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  margin-right: 16px;
+}
+
+.leftSide > div:not(:last-child) {
+  margin-bottom: 16px;
+}
+
+.rightSide {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+}

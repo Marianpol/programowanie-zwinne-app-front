@@ -7,14 +7,28 @@ export interface ButtonProps {
   children: ReactNode;
   onClick?: (event: any) => void;
   className?: string;
-  textSize?: "very-small" | "small" | "medium" | "large";
+  textSize?: TextSize;
+  textAlign?: TextAlign;
+  textColor?: TextColor;
+  textWeight?: TextWeight;
+  icon?: ReactNode;
 }
 
-const Button = ({ children, onClick, textSize = "medium", className }: ButtonProps) => {
+const Button = ({
+  children,
+  onClick,
+  textSize = "medium",
+  textColor = "primary",
+  textAlign = "center",
+  textWeight = "regular",
+  icon,
+  className,
+}: ButtonProps) => {
   const rootClassName = clsx(s.root, className);
   return (
     <button className={rootClassName} onClick={onClick}>
-      <Text upperCase size={textSize} align="center">
+      <div style={{ marginRight: 8 }}>{icon}</div>
+      <Text upperCase size={textSize} color={textColor} align={textAlign} weight={textWeight}>
         {children}
       </Text>
     </button>

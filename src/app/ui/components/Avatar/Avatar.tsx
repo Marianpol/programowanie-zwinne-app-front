@@ -12,17 +12,27 @@ export interface AvatarProps {
   className?: string;
   onClick?: (...args: any) => void;
   component?: any;
+  variant?: "round" | "square";
 }
 
-const Avatar = ({ children, color = "primary", component, className, ...props }: AvatarProps) => {
+const Avatar = ({
+  children,
+  color = "primary",
+  variant = "square",
+  component,
+  className,
+  ...props
+}: AvatarProps) => {
   const rootClassName = clsx(s.root, className, {
     [s.bgPrimary]: color === "primary",
     [s.bgSecondary]: color === "secondary",
+    [s.round]: variant === "round",
+    [s.square]: variant === "square",
   });
   const AvatarComponent = component ? component : "div";
   return (
     <AvatarComponent className={rootClassName} {...props}>
-      <Text upperCase className={s.text}>
+      <Text upperCase color="white">
         {children}
       </Text>
     </AvatarComponent>

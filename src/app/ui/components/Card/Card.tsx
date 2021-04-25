@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import React, { ReactNode, CSSProperties } from "react";
+import React, { CSSProperties, ReactNode } from "react";
 import s from "./Card.module.css";
 
 export interface CardProps {

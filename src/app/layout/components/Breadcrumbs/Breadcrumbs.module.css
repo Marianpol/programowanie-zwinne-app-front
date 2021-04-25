@@ -22,3 +22,11 @@
   border-radius: 50%;
   margin-left: 16px;
 }
+
+.breadcrumbActive {
+  color: #00ab55;
+}
+
+.breadcrumbActive a {
+  cursor: default;
+}

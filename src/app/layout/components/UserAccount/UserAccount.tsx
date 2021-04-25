@@ -11,7 +11,7 @@ const UserAccount = () => {
 
   return (
     <>
-      <Avatar onClick={toggle} component="button" className={s.root}>
+      <Avatar onClick={toggle} component="button" className={s.root} variant="round">
         JK
       </Avatar>
 

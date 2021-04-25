@@ -11,6 +11,10 @@
 }
 
 .largeSize {
+  font-size: 20px;
+}
+
+.veryLargeSize {
   font-size: 24px;
 }
 
@@ -36,6 +40,18 @@
 
 .whiteColor {
   color: #fff;
+}
+
+.greyColor {
+  color: #9b9b9b;
+}
+
+.lightGreyColor {
+  color: #cecece;
+}
+
+.inheritColor {
+  color: inherit;
 }
 
 .leftTextAlign {

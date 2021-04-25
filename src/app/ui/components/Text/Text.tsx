@@ -5,10 +5,10 @@ import s from "./Text.module.css";
 export interface TextProps {
   children: ReactNode;
   className?: string;
-  size?: "very-small" | "small" | "medium" | "large";
-  weight?: "regular" | "medium" | "semi-bold" | "bold";
-  color?: "primary" | "white";
-  align?: "left" | "center" | "right";
+  size?: TextSize;
+  weight?: TextWeight;
+  color?: TextColor;
+  align?: TextAlign;
   upperCase?: boolean;
 }
 
@@ -21,17 +21,21 @@ const Text = ({
   className,
   upperCase,
 }: TextProps) => {
-  const rootClassName = clsx(s.root, className, {
+  const rootClassName = clsx(className, {
     [s.verySmallSize]: size === "very-small",
     [s.smallSize]: size === "small",
     [s.mediumSize]: size === "medium",
     [s.largeSize]: size === "large",
+    [s.veryLargeSize]: size === "very-large",
     [s.regularWeight]: weight === "regular",
     [s.mediumWeight]: weight === "medium",
     [s.semiBoldWeight]: weight === "semi-bold",
     [s.boldWeight]: weight === "bold",
     [s.primaryColor]: color === "primary",
     [s.whiteColor]: color === "white",
+    [s.greyColor]: color === "grey",
+    [s.lightGreyColor]: color === "light-grey",
+    [s.inheritColor]: color === "inherit",
     [s.leftTextAlign]: align === "left",
     [s.rightTextAlign]: align === "right",
     [s.centerTextAlign]: align === "center",

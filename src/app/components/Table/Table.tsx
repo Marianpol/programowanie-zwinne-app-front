@@ -17,8 +17,8 @@ const Table = ({ data, columns, url, style }: TableProps) => {
     <table style={style} className={s.table}>
       <thead>
         <tr>
-          {headers.map((column) => (
-            <th key={column.id} className={s.th}>
+          {headers.map((column, index) => (
+            <th key={index} className={s.th}>
               {column.label}
             </th>
           ))}

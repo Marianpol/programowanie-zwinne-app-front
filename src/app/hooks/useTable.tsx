@@ -20,7 +20,8 @@ const useTable = ({ data, columns, url }: { data: any[]; columns: Columns[]; url
 
   const getValue = ({ row, cell }: { row: any; cell: Columns }) => {
     if (cell.options?.type === "label") return <Label status={row.data[cell.accessor]} />;
-    if (cell.options?.format === "date") return row.data[cell.accessor].toLocaleDateString();
+    // if (cell.options?.format === "date") return row.data[cell.accessor].toLocaleDateString();
+    if (cell.options?.format === "date") return new Date().toLocaleDateString();
     if (cell.accessor === "name") {
       const avatarLabel = firstLetters(row.data[cell.options?.avatarAccessor ?? ""] ?? "");
 
