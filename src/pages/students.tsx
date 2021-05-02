@@ -5,7 +5,7 @@ import Columns from "app/types/Columns";
 import React from "react";
 import mock from "../../mock.json";
 
-const columns: Columns[] = [
+export const students_columns: Columns[] = [
   { label: "Student", accessor: "name", options: { avatarAccessor: "name" } },
   { label: "Numer indeksu", accessor: "indexNumber" },
   { label: "E-mail", accessor: "email" },
@@ -22,7 +22,7 @@ const StudentsPage = () => {
     <Page title="Lista studentów" breadcrumbs={breadcrumbs}>
       <TableWrapper
         data={mock.students}
-        columns={columns}
+        columns={students_columns}
         url="/student"
         placeholder="Szukaj studenta..."
       />

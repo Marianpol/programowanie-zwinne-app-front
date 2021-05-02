@@ -4,7 +4,7 @@ import s from "./Button.module.css";
 import Text from "app/ui/components/Text";
 
 export interface ButtonProps {
-  children: ReactNode;
+  children?: ReactNode;
   onClick?: (event: any) => void;
   className?: string;
   textSize?: TextSize;
@@ -28,9 +28,11 @@ const Button = ({
   return (
     <button className={rootClassName} onClick={onClick}>
       <div style={{ marginRight: 8 }}>{icon}</div>
-      <Text upperCase size={textSize} color={textColor} align={textAlign} weight={textWeight}>
-        {children}
-      </Text>
+      {children ? (
+        <Text upperCase size={textSize} color={textColor} align={textAlign} weight={textWeight}>
+          {children}
+        </Text>
+      ) : null}
     </button>
   );
 };

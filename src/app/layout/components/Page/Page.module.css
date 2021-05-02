@@ -1,4 +1,5 @@
 .root {
-  height: 78%;
-  padding-top: 64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }

@@ -1,0 +1,25 @@
+.root {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.title {
+  margin-bottom: 16px;
+}
+
+.wrapper {
+  display: flex;
+  margin-bottom: 8px;
+}
+
+.textWrapper {
+  margin-left: 12px;
+}
+
+.statusActive {
+  color: #00ab55;
+}
+
+.statusInactive {
+  color: #d81f28;
+}

@@ -1,0 +1,44 @@
+.root {
+  height: 100%;
+}
+
+.title {
+  margin-bottom: 16px;
+  padding: 16px 16px 0 16px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.files {
+  flex: 1 1;
+  overflow-y: scroll;
+  padding: 16px;
+}
+
+.file {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.file:not(:last-child) {
+  margin-bottom: 16px;
+}
+
+.author {
+  display: flex;
+  flex-direction: column;
+  margin-left: 16px;
+}
+
+.button svg {
+  transition: fill 0.3s;
+}
+
+.button:hover svg {
+  fill: #000;
+}

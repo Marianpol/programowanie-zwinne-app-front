@@ -1,5 +1,6 @@
 import Page from "app/layout/components/Page";
 import IBreadcrumbs from "app/layout/types/breadcrumbs";
+import ProjectView from "modules/project/components/ProjectView";
 import { useRouter } from "next/router";
 import React, { useMemo } from "react";
 import mock from "../../../mock.json";
@@ -28,7 +29,7 @@ const ProjectPage = () => {
 
   return (
     <Page title={title} breadcrumbs={breadcrumbs}>
-      Projekt {name}
+      <ProjectView project={project} />
     </Page>
   );
 };

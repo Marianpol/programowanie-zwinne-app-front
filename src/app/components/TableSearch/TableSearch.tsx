@@ -3,15 +3,16 @@ import React, { CSSProperties } from "react";
 import s from "./TableSearch.module.css";
 
 export interface TableSearchProps {
+  onChange: (event: any) => void;
   placeholder?: string;
   style?: CSSProperties;
 }
 
-const TableSearch = ({ placeholder = "Szukaj...", ...props }: TableSearchProps) => {
+const TableSearch = ({ onChange, placeholder = "Szukaj...", ...props }: TableSearchProps) => {
   return (
     <label {...props} htmlFor="search" className={s.label}>
       <SearchIcon width="15px" fill="#cecece" className={s.icon} />
-      <input placeholder={placeholder} id="search" className={s.input} />
+      <input placeholder={placeholder} id="search" className={s.input} onChange={onChange} />
     </label>
   );
 };

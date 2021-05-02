@@ -6,12 +6,13 @@ export interface ButtonIconProps {
   icon: ReactNode;
   onClick?: (event: any) => void;
   className?: string;
+  disabled?: boolean;
 }
 
-const ButtonIcon = ({ icon, onClick, className }: ButtonIconProps) => {
+const ButtonIcon = ({ icon, onClick, className, disabled }: ButtonIconProps) => {
   const rootClassName = clsx(s.root, className);
   return (
-    <button className={rootClassName} onClick={onClick}>
+    <button disabled={disabled} className={rootClassName} onClick={onClick}>
       {icon}
     </button>
   );

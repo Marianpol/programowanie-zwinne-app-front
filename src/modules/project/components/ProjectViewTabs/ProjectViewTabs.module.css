@@ -1,0 +1,25 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1;
+}
+
+.tab {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 5px;
+  border: 1px solid #e6e6e6;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.02), 0 3px 6px rgba(0, 0, 0, 0.04);
+  padding: 16px;
+  flex: 1 1;
+}
+
+.tab:not(:last-child) {
+  margin-bottom: 16px;
+}
+
+.tabActive {
+  color: #00ab55;
+}
