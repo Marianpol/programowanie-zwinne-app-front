@@ -1,0 +1,20 @@
+.root {
+  width: 40%;
+}
+
+.root:not(:last-child) {
+  margin-bottom: 16px;
+}
+
+.rootPrimary {
+  background-color: #26d37d;
+  margin-left: auto;
+}
+
+.rootSecondary {
+  background-color: #d4d8d6;
+}
+
+.author {
+  margin-bottom: 8px;
+}

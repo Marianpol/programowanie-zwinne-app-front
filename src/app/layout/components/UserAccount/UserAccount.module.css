@@ -1,0 +1,46 @@
+.root {
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.02), 0 3px 6px rgba(0, 0, 0, 0.04);
+  border: none;
+}
+
+.popupMenu {
+  position: absolute;
+  top: 55px;
+  right: 0;
+  min-width: 200px;
+  background-color: #fff;
+  border: 1px solid #e6e6e6;
+  border-radius: 5px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.02), 0 3px 6px rgba(0, 0, 0, 0.04);
+}
+
+.popupMenu > div {
+  height: 35px;
+}
+
+.userName {
+  background-color: #efefef;
+  padding: 8px 16px;
+  color: #707070;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.logout {
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+
+.logout a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 8px 16px;
+}
+
+.logout:hover {
+  background-color: #efefef;
+}

@@ -1,0 +1,16 @@
+.root {
+  width: 100%;
+}
+
+.title {
+  margin-bottom: 16px;
+}
+
+.wrapper {
+  display: flex;
+  margin-bottom: 8px;
+}
+
+.textWrapper {
+  margin-left: 12px;
+}

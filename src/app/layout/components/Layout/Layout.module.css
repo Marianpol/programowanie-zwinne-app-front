@@ -1,13 +1,14 @@
 .root {
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
 }
 
 .content {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  width: 80%;
+  display: grid;
+  grid-template-rows: 6% 12% 72%;
+  row-gap: 5%;
+  width: 100%;
   padding: 64px;
   background-image: url("../../../../../public/background.jpg");
   background-position: center;

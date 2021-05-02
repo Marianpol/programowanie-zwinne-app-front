@@ -1,0 +1,20 @@
+.root {
+  display: flex;
+  justify-content: flex-end;
+  border-top: 1px solid #f3f3f3;
+}
+
+.select {
+  border: 0;
+  font-size: 15px;
+}
+
+.amountOfElements {
+  display: flex;
+  align-items: center;
+  margin-right: 24px;
+}
+
+.arrow {
+  transform: rotateY(-180deg);
+}

@@ -1,3 +1,7 @@
+.verySmallSize {
+  font-size: 10px;
+}
+
 .smallSize {
   font-size: 12px;
 }
@@ -7,6 +11,10 @@
 }
 
 .largeSize {
+  font-size: 20px;
+}
+
+.veryLargeSize {
   font-size: 24px;
 }
 
@@ -28,6 +36,34 @@
 
 .primaryColor {
   color: var(--primary-color);
+}
+
+.whiteColor {
+  color: #fff;
+}
+
+.greyColor {
+  color: #9b9b9b;
+}
+
+.lightGreyColor {
+  color: #cecece;
+}
+
+.inheritColor {
+  color: inherit;
+}
+
+.leftTextAlign {
+  text-align: left;
+}
+
+.rightTextAlign {
+  text-align: right;
+}
+
+.centerTextAlign {
+  text-align: center;
 }
 
 .upperCase {
