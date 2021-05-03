@@ -3,17 +3,8 @@
   height: 100%;
 }
 
-.leftSide {
-  width: calc(40% - 16px);
-  margin-right: 16px;
-}
-
 .rightSide {
   display: flex;
   flex-direction: column;
   width: 60%;
-}
-
-.title {
-  margin-bottom: 16px;
 }

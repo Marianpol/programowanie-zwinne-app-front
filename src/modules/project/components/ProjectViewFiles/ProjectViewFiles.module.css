@@ -3,8 +3,8 @@
 }
 
 .title {
-  margin-bottom: 16px;
-  padding: 16px 16px 0 16px;
+  margin-bottom: var(--spacing-3);
+  padding: var(--spacing-3) var(--spacing-3) 0 var(--spacing-3);
 }
 
 .content {
@@ -16,7 +16,7 @@
 .files {
   flex: 1 1;
   overflow-y: scroll;
-  padding: 16px;
+  padding: var(--spacing-3);
 }
 
 .file {
@@ -26,13 +26,13 @@
 }
 
 .file:not(:last-child) {
-  margin-bottom: 16px;
+  margin-bottom: var(--spacing-3);
 }
 
 .author {
   display: flex;
   flex-direction: column;
-  margin-left: 16px;
+  margin-left: var(--spacing-3);
 }
 
 .button svg {
@@ -40,5 +40,5 @@
 }
 
 .button:hover svg {
-  fill: #000;
+  fill: var(--black);
 }

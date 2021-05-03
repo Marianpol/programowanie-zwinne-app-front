@@ -3,14 +3,14 @@
 }
 
 .title {
-  margin-bottom: 16px;
+  margin-bottom: var(--spacing-2);
 }
 
 .wrapper {
   display: flex;
-  margin-bottom: 8px;
+  margin-bottom: var(--spacing-1);
 }
 
 .textWrapper {
-  margin-left: 12px;
+  margin-left: var(--spacing-2);
 }

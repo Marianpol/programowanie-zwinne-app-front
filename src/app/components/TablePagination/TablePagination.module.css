@@ -1,18 +1,18 @@
 .root {
   display: flex;
   justify-content: flex-end;
-  border-top: 1px solid #f3f3f3;
+  border-top: 1px solid var(--grey-1);
 }
 
 .select {
   border: 0;
-  font-size: 15px;
+  font-size: var(--font-size-sm);
 }
 
 .amountOfElements {
   display: flex;
   align-items: center;
-  margin-right: 24px;
+  margin-right: var(--spacing-5);
 }
 
 .arrow {

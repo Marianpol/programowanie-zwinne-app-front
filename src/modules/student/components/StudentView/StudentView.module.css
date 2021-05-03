@@ -7,11 +7,11 @@
   display: flex;
   flex-direction: column;
   width: 30%;
-  margin-right: 16px;
+  margin-right: var(--spacing-3);
 }
 
 .leftSide > div:not(:last-child) {
-  margin-bottom: 16px;
+  margin-bottom: var(--spacing-3);
 }
 
 .rightSide {

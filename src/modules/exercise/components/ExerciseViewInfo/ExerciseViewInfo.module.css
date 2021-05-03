@@ -1,0 +1,8 @@
+.leftSide {
+  width: calc(40% - 16px);
+  margin-right: var(--spacing-3);
+}
+
+.title {
+  margin-bottom: var(--spacing-3);
+}

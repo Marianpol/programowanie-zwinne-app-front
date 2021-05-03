@@ -1,21 +1,21 @@
 .verySmallSize {
-  font-size: 10px;
+  font-size: var(--font-size-xxxs);
 }
 
 .smallSize {
-  font-size: 12px;
+  font-size: var(--font-size-xxs);
 }
 
 .mediumSize {
-  font-size: 16px;
+  font-size: var(--font-size-sm);
 }
 
 .largeSize {
-  font-size: 20px;
+  font-size: var(--font-size-lg);
 }
 
 .veryLargeSize {
-  font-size: 24px;
+  font-size: var(--font-size-xl);
 }
 
 .regularWeight {
@@ -39,15 +39,15 @@
 }
 
 .whiteColor {
-  color: #fff;
-}
-
-.greyColor {
-  color: #9b9b9b;
+  color: var(--white);
 }
 
 .lightGreyColor {
-  color: #cecece;
+  color: var(--grey-4);
+}
+
+.greyColor {
+  color: var(--grey-5);
 }
 
 .inheritColor {

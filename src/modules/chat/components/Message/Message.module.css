@@ -3,18 +3,18 @@
 }
 
 .root:not(:last-child) {
-  margin-bottom: 16px;
+  margin-bottom: var(--spacing-3);
 }
 
 .rootPrimary {
-  background-color: #26d37d;
+  background-color: var(--green-1);
   margin-left: auto;
 }
 
 .rootSecondary {
-  background-color: #d4d8d6;
+  background-color: var(--grey-2);
 }
 
 .author {
-  margin-bottom: 8px;
+  margin-bottom: var(--spacing-1);
 }
