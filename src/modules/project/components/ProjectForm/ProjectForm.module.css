@@ -9,7 +9,6 @@
 .footer {
   display: flex;
   justify-content: flex-end;
-  padding-top: var(--spacing-2);
 }
 
 .button {

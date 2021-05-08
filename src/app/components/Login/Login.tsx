@@ -43,7 +43,7 @@ const Login = () => {
       <Card className={s.card}>
         <div className={s.header}>
           <Text size="very-large" weight="semi-bold">
-            Zaloguj się
+            Logowanie
           </Text>
         </div>
         <Form onSubmit={handleSubmit} className={s.content}>
@@ -62,6 +62,7 @@ const Login = () => {
           {error.username ? <ErrorTag /> : null}
 
           <Input
+            type="password"
             name="password"
             placeholder="Hasło"
             label="Hasło"
@@ -80,7 +81,7 @@ const Login = () => {
               Zaloguj się
             </Button>
             <Button className={s.button} textColor="white" onClick={() => Router.push("/register")}>
-              Zarejestruj się
+              Rejestracja
             </Button>
           </div>
         </Form>

@@ -10,7 +10,7 @@ export interface LayoutProps {
 const Layout = ({ children }: LayoutProps) => {
   const { pathname } = useRouter();
   const contentClassName = clsx(s.content, {
-    [s.contentWithoutGrid]: pathname === "/login" || pathname === "/register",
+    [s.contentWithoutGrid]: ["/login", "/register"].includes(pathname),
   });
   return (
     <div className={s.root}>

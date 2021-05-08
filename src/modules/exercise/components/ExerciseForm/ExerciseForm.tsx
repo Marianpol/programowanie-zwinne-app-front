@@ -5,30 +5,37 @@ import Card from "app/ui/components/Card";
 import Input from "app/ui/components/Input";
 import Text from "app/ui/components/Text";
 import Textarea from "app/ui/components/Textarea";
+import Exercise from "modules/exercise/types/Exercise";
 import React, { useState } from "react";
 import s from "./ExerciseForm.module.css";
 
-const ExerciseForm = () => {
-  const [values, setValues] = useState<any>({
-    title: "",
+export interface ExerciseFormProps {
+  initialValues?: Exercise;
+  isEdit?: boolean;
+}
+
+const ExerciseForm = ({ initialValues, isEdit }: ExerciseFormProps) => {
+  const [values, setValues] = useState<Pick<Exercise, "name" | "description">>({
+    name: "",
     description: "",
+    ...initialValues,
   });
 
   const [error, setError] = useState({
-    title: false,
+    name: false,
     description: false,
   });
 
-  const { title, description } = values;
+  const { name, description } = values;
 
   const handleSubmit = (event: any) => {
     event.preventDefault();
     setError({
-      title: !title.length,
+      name: !name.length,
       description: !description.length,
     });
 
-    if (title.length && description.length) {
+    if (name.length && description.length) {
       console.log(values);
     }
   };
@@ -42,24 +49,24 @@ const ExerciseForm = () => {
     <Card>
       <div className={s.header}>
         <Text weight="medium" size="large">
-          Nowe zadanie
+          {!isEdit ? "Nowe zadanie" : "Edycja zadania"}
         </Text>
       </div>
 
       <Form onSubmit={handleSubmit}>
         <Input
-          name="title"
+          name="name"
           placeholder="Nazwa zadania"
           label="Nazwa zadania"
-          value={title}
-          onChange={(event) => handleChange(event, "title")}
-          onBlur={handleBlur("title")}
+          value={name}
+          onChange={(event) => handleChange(event, "name")}
+          onBlur={handleBlur("name")}
           className={s.input}
-          error={error.title}
+          error={error.name}
           fullWidth
           required
         />
-        {error.title ? <ErrorTag /> : null}
+        {error.name ? <ErrorTag /> : null}
 
         <Textarea
           multiline
@@ -80,7 +87,7 @@ const ExerciseForm = () => {
 
         <div className={s.footer}>
           <Button textColor="white" className={s.button} type="submit">
-            Dodaj
+            {!isEdit ? "Dodaj" : "Zapisz"}
           </Button>
         </div>
       </Form>

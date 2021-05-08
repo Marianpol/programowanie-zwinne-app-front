@@ -1,28 +1,39 @@
+import ButtonIcon from "app/ui/components/ButtonIcon";
 import Card from "app/ui/components/Card";
 import CardContent from "app/ui/components/CardContent";
 import Text from "app/ui/components/Text";
 import CalendarIcon from "app/ui/icons/CalendarIcon";
+import EditIcon from "app/ui/icons/EditIcon";
 import ProjectIcon from "app/ui/icons/ProjectIcon";
 import StatusIcon from "app/ui/icons/StatusIcon";
 import SubjectIcon from "app/ui/icons/SubjectIcon";
 import clsx from "clsx";
+import Project from "modules/project/types/Project";
+import Router from "next/router";
 import React from "react";
 import s from "./ProjectViewInfo.module.css";
 
 export interface StudentViewInfoProps {
-  project: any;
+  project: Project;
 }
 
 const ProjectViewInfo = ({ project }: StudentViewInfoProps) => {
   const createDate = new Date().toLocaleDateString();
 
-  const { name, subject, status } = project ?? {};
+  const { id, name, subject, status } = project ?? {};
   return (
     <Card className={s.root}>
       <CardContent>
-        <Text weight="medium" size="large" className={s.title}>
-          Informacje
-        </Text>
+        <div className={s.header}>
+          <Text weight="medium" size="large">
+            Informacje
+          </Text>
+
+          <ButtonIcon
+            icon={<EditIcon fill="var(--blue-1)" width="18px" />}
+            onClick={() => Router.push(`/project/${id}/edit`)}
+          />
+        </div>
 
         <div className={s.wrapper}>
           <ProjectIcon width="20px" />

@@ -7,7 +7,7 @@ const ProjectAddPage = () => {
   const breadcrumbs: IBreadcrumbs[] = useMemo(
     () => [
       { title: "Strona główna", url: "/" },
-      { title: "Nowy projekt", url: "/projet/add" },
+      { title: "Nowy projekt", url: "/project/add" },
     ],
     []
   );

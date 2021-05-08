@@ -2,8 +2,8 @@ import firstLetters from "app/libs/firstLetters";
 import Columns from "app/types/Columns";
 import Avatar from "app/ui/components/Avatar";
 import Label from "app/ui/components/Label";
-import React from "react";
 import Link from "next/link";
+import React from "react";
 
 const avatarStyle = {
   marginRight: 16,
@@ -23,7 +23,11 @@ const useTable = ({ data, columns, url }: { data: any[]; columns: Columns[]; url
     // if (cell.options?.format === "date") return row.data[cell.accessor].toLocaleDateString();
     if (cell.options?.format === "date") return new Date().toLocaleDateString();
     if (cell.accessor === "name") {
-      const avatarLabel = firstLetters(row.data[cell.options?.avatarAccessor ?? ""] ?? "");
+      const avatarAccessor =
+        typeof row.data[cell.options?.avatarAccessor ?? ""] === "string"
+          ? row.data[cell.options?.avatarAccessor ?? ""]
+          : "-";
+      const avatarLabel = firstLetters(avatarAccessor ?? "-");
 
       return (
         <div style={{ display: "flex", alignItems: "center" }}>

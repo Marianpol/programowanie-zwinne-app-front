@@ -13,15 +13,17 @@ const Register = () => {
     name: "",
     surname: "",
     password: "",
+    repassword: "",
   });
 
   const [error, setError] = useState({
     name: false,
     surname: false,
     password: false,
+    repassword: false,
   });
 
-  const { name, surname, password } = values;
+  const { name, surname, password, repassword } = values;
 
   const handleSubmit = (event: any) => {
     event.preventDefault();
@@ -29,6 +31,7 @@ const Register = () => {
       name: !name.length,
       surname: !surname.length,
       password: !password.length,
+      repassword: !repassword.length,
     });
 
     if (name.length && surname.length && password.length) {
@@ -46,7 +49,7 @@ const Register = () => {
       <Card className={s.card}>
         <div className={s.header}>
           <Text size="very-large" weight="semi-bold">
-            Zarejestruj się
+            Rejestracja
           </Text>
         </div>
         <Form onSubmit={handleSubmit} className={s.content}>
@@ -79,6 +82,7 @@ const Register = () => {
           {error.surname ? <ErrorTag /> : null}
 
           <Input
+            type="password"
             name="password"
             placeholder="Hasło"
             label="Hasło"
@@ -92,12 +96,27 @@ const Register = () => {
           />
           {error.password ? <ErrorTag /> : null}
 
+          <Input
+            type="password"
+            name="repassword"
+            placeholder="Powtórz hasło"
+            label="Powtórz hasło"
+            value={password}
+            onChange={(event) => handleChange(event, "repassword")}
+            onBlur={handleBlur("repassword")}
+            error={error.repassword}
+            className={s.input}
+            fullWidth
+            required
+          />
+          {error.repassword ? <ErrorTag /> : null}
+
           <div className={s.footer}>
             <Button className={s.button} textColor="white" type="submit">
               Zarejestruj się
             </Button>
             <Button className={s.button} textColor="white" onClick={() => Router.push("/login")}>
-              Zaloguj się
+              Logowanie
             </Button>
           </div>
         </Form>

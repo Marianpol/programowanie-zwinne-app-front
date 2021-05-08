@@ -6,40 +6,47 @@ import Checkbox from "app/ui/components/Checkbox";
 import Input from "app/ui/components/Input";
 import Select from "app/ui/components/Select";
 import Text from "app/ui/components/Text";
+import Project from "modules/project/types/Project";
 import React, { useState } from "react";
 import mock from "../../../../../mock.json";
 import s from "./ProjectForm.module.css";
 
-const ProjectForm = () => {
-  const [values, setValues] = useState<any>({
-    title: "",
+export interface ProjectFormProps {
+  initialValues?: Project;
+  isEdit?: boolean;
+}
+
+const ProjectForm = ({ initialValues, isEdit }: ProjectFormProps) => {
+  const [values, setValues] = useState<Omit<Project, "id" | "createDate">>({
+    name: "",
     subject: "",
-    isActive: true,
+    status: true,
     exercises: [],
     users: [],
     files: [],
+    ...initialValues,
   });
 
   const [error, setError] = useState({
-    title: false,
+    name: false,
     subject: false,
     exercises: false,
     users: false,
   });
 
-  const { title, subject, isActive, exercises, users, files } = values;
+  const { name, subject, status, exercises, users, files } = values;
 
   const handleSubmit = (event: any) => {
     event.preventDefault();
 
     setError({
-      title: !title.length,
+      name: !name.length,
       subject: !subject.length,
       exercises: !exercises.length,
       users: !users.length,
     });
 
-    if (title.length && subject.length && exercises.length && users.length) {
+    if (name.length && subject.length && exercises.length && users.length) {
       console.log(values);
     }
   };
@@ -64,7 +71,7 @@ const ProjectForm = () => {
     <Card>
       <div className={s.header}>
         <Text weight="medium" size="large">
-          Nowy projekt
+          {!isEdit ? "Nowy projekt" : "Edycja projektu"}
         </Text>
       </div>
 
@@ -72,16 +79,16 @@ const ProjectForm = () => {
         <Input
           placeholder="Nazwa projektu"
           label="Nazwa projektu"
-          name="title"
-          value={title}
-          onChange={(event) => handleChange(event, "title")}
-          onBlur={handleBlur("title")}
+          name="name"
+          value={name}
+          onChange={(event) => handleChange(event, "name")}
+          onBlur={handleBlur("name")}
           className={s.input}
-          error={error.title}
+          error={error.name}
           fullWidth
           required
         />
-        {error.title ? <ErrorTag /> : null}
+        {error.name ? <ErrorTag /> : null}
 
         <Select
           label="Przedmiot"
@@ -160,15 +167,16 @@ const ProjectForm = () => {
         </div>
 
         <Checkbox
-          name="isActive"
-          checked={isActive}
-          onChange={(event) => setValues({ ...values, isActive: event.target.checked })}
+          name="status"
+          checked={status}
+          onChange={(event) => setValues({ ...values, status: event.target.checked })}
           label="Czy projekt jest aktywny?"
+          className={s.input}
         />
 
         <div className={s.footer}>
           <Button textColor="white" className={s.button} type="submit">
-            Dodaj
+            {!isEdit ? "Dodaj" : "Zapisz"}
           </Button>
         </div>
       </Form>

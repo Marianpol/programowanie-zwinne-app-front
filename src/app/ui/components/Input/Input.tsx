@@ -7,7 +7,7 @@ export interface InputProps {
   value?: any;
   onChange?: (event: any) => void;
   onBlur?: (event: any) => void;
-  type?: "text" | "number";
+  type?: "text" | "number" | "password";
   placeholder?: string;
   className?: string;
   error?: boolean;

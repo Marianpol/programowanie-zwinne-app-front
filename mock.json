@@ -1,237 +1,58 @@
 {
   "students": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Marcin Musiał",
       "indexNumber": "123456",
       "email": "marmus002@utp.edu.pl",
-      "fullTimeStudies": "Tak"
+      "fullTimeStudies": true
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Bartosz Ropejko",
       "indexNumber": "98765",
       "email": "barrop000@utp.edu.pl",
-      "fullTimeStudies": "Tak"
+      "fullTimeStudies": true
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Piotr Czapiewski",
       "indexNumber": "567933",
       "email": "piocza001@utp.edu.pl",
-      "fullTimeStudies": "Tak"
+      "fullTimeStudies": true
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Mateusz Matysiak",
       "indexNumber": "109542",
       "email": "matmat008@utp.edu.pl",
-      "fullTimeStudies": "Tak"
-    },
-    {
-      "id": 5,
-      "name": "Marcin Musiał",
-      "indexNumber": "123456",
-      "email": "marmus002@utp.edu.pl",
-      "fullTimeStudies": "Tak"
-    },
-    {
-      "id": 6,
-      "name": "Bartosz Ropejko",
-      "indexNumber": "98765",
-      "email": "barrop000@utp.edu.pl",
-      "fullTimeStudies": "Tak"
-    },
-    {
-      "id": 7,
-      "name": "Piotr Czapiewski",
-      "indexNumber": "567933",
-      "email": "piocza001@utp.edu.pl",
-      "fullTimeStudies": "Tak"
-    },
-    {
-      "id": 8,
-      "name": "Mateusz Matysiak",
-      "indexNumber": "109542",
-      "email": "matmat008@utp.edu.pl",
-      "fullTimeStudies": "Tak"
-    },
-    {
-      "id": 9,
-      "name": "Marcin Musiał",
-      "indexNumber": "123456",
-      "email": "marmus002@utp.edu.pl",
-      "fullTimeStudies": "Tak"
-    },
-    {
-      "id": 10,
-      "name": "Bartosz Ropejko",
-      "indexNumber": "98765",
-      "email": "barrop000@utp.edu.pl",
-      "fullTimeStudies": "Tak"
-    },
-    {
-      "id": 11,
-      "name": "Piotr Czapiewski",
-      "indexNumber": "567933",
-      "email": "piocza001@utp.edu.pl",
-      "fullTimeStudies": "Tak"
-    },
-    {
-      "id": 12,
-      "name": "Mateusz Matysiak",
-      "indexNumber": "109542",
-      "email": "matmat008@utp.edu.pl",
-      "fullTimeStudies": "Tak"
-    },
-    {
-      "id": 13,
-      "name": "Marcin Musiał",
-      "indexNumber": "123456",
-      "email": "marmus002@utp.edu.pl",
-      "fullTimeStudies": "Tak"
-    },
-    {
-      "id": 14,
-      "name": "Bartosz Ropejko",
-      "indexNumber": "98765",
-      "email": "barrop000@utp.edu.pl",
-      "fullTimeStudies": "Tak"
-    },
-    {
-      "id": 15,
-      "name": "Piotr Czapiewski",
-      "indexNumber": "567933",
-      "email": "piocza001@utp.edu.pl",
-      "fullTimeStudies": "Tak"
-    },
-    {
-      "id": 16,
-      "name": "Mateusz Matysiak",
-      "indexNumber": "109542",
-      "email": "matmat008@utp.edu.pl",
-      "fullTimeStudies": "Tak"
-    },
-    {
-      "id": 17,
-      "name": "Marcin Musiał",
-      "indexNumber": "123456",
-      "email": "marmus002@utp.edu.pl",
-      "fullTimeStudies": "Tak"
-    },
-    {
-      "id": 18,
-      "name": "Bartosz Ropejko",
-      "indexNumber": "98765",
-      "email": "barrop000@utp.edu.pl",
-      "fullTimeStudies": "Tak"
-    },
-    {
-      "id": 19,
-      "name": "Piotr Czapiewski",
-      "indexNumber": "567933",
-      "email": "piocza001@utp.edu.pl",
-      "fullTimeStudies": "Tak"
-    },
-    {
-      "id": 20,
-      "name": "Mateusz Matysiak",
-      "indexNumber": "109542",
-      "email": "matmat008@utp.edu.pl",
-      "fullTimeStudies": "Tak"
-    },
-    {
-      "id": 21,
-      "name": "Marcin Musiał",
-      "indexNumber": "123456",
-      "email": "marmus002@utp.edu.pl",
-      "fullTimeStudies": "Tak"
-    },
-    {
-      "id": 22,
-      "name": "Bartosz Ropejko",
-      "indexNumber": "98765",
-      "email": "barrop000@utp.edu.pl",
-      "fullTimeStudies": "Tak"
-    },
-    {
-      "id": 23,
-      "name": "Piotr Czapiewski",
-      "indexNumber": "567933",
-      "email": "piocza001@utp.edu.pl",
-      "fullTimeStudies": "Tak"
-    },
-    {
-      "id": 24,
-      "name": "Mateusz Matysiak",
-      "indexNumber": "109542",
-      "email": "matmat008@utp.edu.pl",
-      "fullTimeStudies": "Tak"
-    },
-    {
-      "id": 25,
-      "name": "Marcin Musiał",
-      "indexNumber": "123456",
-      "email": "marmus002@utp.edu.pl",
-      "fullTimeStudies": "Tak"
-    },
-    {
-      "id": 26,
-      "name": "Bartosz Ropejko",
-      "indexNumber": "98765",
-      "email": "barrop000@utp.edu.pl",
-      "fullTimeStudies": "Tak"
-    },
-    {
-      "id": 27,
-      "name": "Piotr Czapiewski",
-      "indexNumber": "567933",
-      "email": "piocza001@utp.edu.pl",
-      "fullTimeStudies": "Tak"
-    },
-    {
-      "id": 28,
-      "name": "Mateusz Matysiak",
-      "indexNumber": "109542",
-      "email": "matmat008@utp.edu.pl",
-      "fullTimeStudies": "Tak"
-    },
-    {
-      "id": 29,
-      "name": "Marcin Musiał",
-      "indexNumber": "123456",
-      "email": "marmus002@utp.edu.pl",
-      "fullTimeStudies": "Tak"
-    },
-    {
-      "id": 30,
-      "name": "Bartosz Ropejko",
-      "indexNumber": "98765",
-      "email": "barrop000@utp.edu.pl",
-      "fullTimeStudies": "Tak"
-    },
-    {
-      "id": 31,
-      "name": "Piotr Czapiewski",
-      "indexNumber": "567933",
-      "email": "piocza001@utp.edu.pl",
-      "fullTimeStudies": "Tak"
-    },
-    {
-      "id": 32,
-      "name": "Mateusz Matysiak",
-      "indexNumber": "109542",
-      "email": "matmat008@utp.edu.pl",
-      "fullTimeStudies": "Tak"
+      "fullTimeStudies": true
     }
   ],
   "projects": [
     {
       "id": 1,
       "name": "Przykładowa nazwa projektu Lorem",
-      "subject": "Programowanie zwinne",
+      "subject": { "id": 1, "name": "Programowanie zwinne" },
       "status": true,
       "createDate": "createDate",
+      "exercises": [
+        {
+          "id": 1,
+          "name": "Przykładowa nazwa zadania",
+          "description": "Ut et sagittis eros, quis pellentesque enim. Nulla nec orci malesuada, bibendum metus non, finibus mauris. Cras eleifend mi erat, ultrices accumsan mi faucibus vel. Nulla sed eleifend felis, at faucibus nunc.",
+          "createDate": "createDate"
+        }
+      ],
+      "users": [
+        {
+          "id": 25,
+          "name": "Marcin Musiał",
+          "indexNumber": "123456",
+          "email": "marmus002@utp.edu.pl",
+          "fullTimeStudies": true
+        }
+      ],
       "files": [
         {
           "id": 1,
@@ -242,7 +63,7 @@
             "name": "Bartosz Ropejko",
             "indexNumber": "98765",
             "email": "barrop000@utp.edu.pl",
-            "fullTimeStudies": "Tak"
+            "fullTimeStudies": true
           }
         },
         {
@@ -254,7 +75,7 @@
             "name": "Piotr Czapiewski",
             "indexNumber": "567933",
             "email": "piocza001@utp.edu.pl",
-            "fullTimeStudies": "Tak"
+            "fullTimeStudies": true
           }
         }
       ]
@@ -262,7 +83,7 @@
     {
       "id": 2,
       "name": "Przykładowa nazwa projektu Ipsum",
-      "subject": "Programowanie zwinne",
+      "subject": { "id": 1, "name": "Programowanie zwinne" },
       "status": false,
       "createDate": "createDate",
       "files": []
@@ -270,7 +91,7 @@
     {
       "id": 3,
       "name": "Przykładowa nazwa projektu Test",
-      "subject": "Programowanie zwinne",
+      "subject": { "id": 1, "name": "Programowanie zwinne" },
       "status": false,
       "createDate": "createDate",
       "files": []
@@ -278,7 +99,7 @@
     {
       "id": 4,
       "name": "Przykładowa nazwa projektu Wyszukiwarki",
-      "subject": "Programowanie zwinne",
+      "subject": { "id": 1, "name": "Programowanie zwinne" },
       "status": true,
       "createDate": "createDate",
       "files": []
@@ -286,7 +107,7 @@
     {
       "id": 5,
       "name": "Przykładowa nazwa projektu DDD",
-      "subject": "Programowanie zwinne",
+      "subject": { "id": 1, "name": "Programowanie zwinne" },
       "status": true,
       "createDate": "createDate",
       "files": []
@@ -294,7 +115,7 @@
     {
       "id": 6,
       "name": "Przykładowa nazwa projektu DDDZ",
-      "subject": "Programowanie zwinne",
+      "subject": { "id": 1, "name": "Programowanie zwinne" },
       "status": false,
       "createDate": "createDate",
       "files": []
@@ -302,9 +123,15 @@
   ],
   "exercises": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Przykładowa nazwa zadania",
       "description": "Ut et sagittis eros, quis pellentesque enim. Nulla nec orci malesuada, bibendum metus non, finibus mauris. Cras eleifend mi erat, ultrices accumsan mi faucibus vel. Nulla sed eleifend felis, at faucibus nunc.",
+      "createDate": "createDate"
+    },
+    {
+      "id": "2",
+      "name": "Przykładowa nazwa zadania 222",
+      "description": "Ut et sagittis eros, quis pellentesque enim. Nulla nec orci malesuada, bibendum metus non.",
       "createDate": "createDate"
     }
   ],
@@ -318,7 +145,7 @@
         "name": "Marcin Musiał",
         "indexNumber": "123456",
         "email": "marmus002@utp.edu.pl",
-        "fullTimeStudies": "Tak"
+        "fullTimeStudies": true
       }
     },
     {
@@ -330,7 +157,7 @@
         "name": "Bartosz Ropejko",
         "indexNumber": "98765",
         "email": "barrop000@utp.edu.pl",
-        "fullTimeStudies": "Tak"
+        "fullTimeStudies": true
       }
     },
     {
@@ -342,7 +169,7 @@
         "name": "Piotr Czapiewski",
         "indexNumber": "567933",
         "email": "piocza001@utp.edu.pl",
-        "fullTimeStudies": "Tak"
+        "fullTimeStudies": true
       }
     },
     {
@@ -354,7 +181,7 @@
         "name": "Mateusz Matysiak",
         "indexNumber": "109542",
         "email": "matmat008@utp.edu.pl",
-        "fullTimeStudies": "Tak"
+        "fullTimeStudies": true
       }
     },
     {
@@ -365,7 +192,7 @@
         "name": "Bartosz Ropejko",
         "indexNumber": "98765",
         "email": "barrop000@utp.edu.pl",
-        "fullTimeStudies": "Tak"
+        "fullTimeStudies": true
       }
     },
     {
@@ -376,7 +203,7 @@
         "name": "Piotr Czapiewski",
         "indexNumber": "567933",
         "email": "piocza001@utp.edu.pl",
-        "fullTimeStudies": "Tak"
+        "fullTimeStudies": true
       }
     }
   ],

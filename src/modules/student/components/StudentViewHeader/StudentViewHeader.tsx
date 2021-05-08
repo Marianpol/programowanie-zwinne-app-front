@@ -1,10 +1,13 @@
 import firstLetters from "app/libs/firstLetters";
 import Button from "app/ui/components/Button";
+import ButtonIcon from "app/ui/components/ButtonIcon";
 import Card from "app/ui/components/Card";
 import Text from "app/ui/components/Text";
+import EditIcon from "app/ui/icons/EditIcon";
 import ExerciseIcon from "app/ui/icons/ExerciseIcon";
 import ProjectIcon from "app/ui/icons/ProjectIcon";
 import clsx from "clsx";
+import Router from "next/router";
 import React from "react";
 import s from "./StudentViewHeader.module.css";
 
@@ -15,7 +18,7 @@ export interface StudentViewHeaderProps {
 }
 
 const StudentViewHeader = ({ user, tab, onChangeTab }: StudentViewHeaderProps) => {
-  const { name, type } = user ?? {};
+  const { id, name, type } = user ?? {};
 
   const getTabClassName = (tabName: string) => clsx(s.tab, { [s.tabActive]: tabName === tab });
   const getTextColor = (tabName: string) => (tabName === tab ? "inherit" : "grey");
@@ -23,6 +26,12 @@ const StudentViewHeader = ({ user, tab, onChangeTab }: StudentViewHeaderProps) =
   return (
     <Card className={s.root}>
       <div className={s.background}></div>
+
+      <ButtonIcon
+        icon={<EditIcon fill="var(--white-1)" width="18px" />}
+        onClick={() => Router.push(`/student/${id}/edit`)}
+        className={s.buttonIcon}
+      />
 
       <div className={s.avatar}>
         <Text color="white" weight="medium" size="very-large">

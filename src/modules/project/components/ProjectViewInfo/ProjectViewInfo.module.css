@@ -3,7 +3,9 @@
   margin-bottom: var(--spacing-2);
 }
 
-.title {
+.header {
+  display: flex;
+  justify-content: space-between;
   margin-bottom: var(--spacing-2);
 }
 

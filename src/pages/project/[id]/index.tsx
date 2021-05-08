@@ -1,18 +1,25 @@
 import Page from "app/layout/components/Page";
 import IBreadcrumbs from "app/layout/types/breadcrumbs";
 import ProjectView from "modules/project/components/ProjectView";
+import Project from "modules/project/types/Project";
 import { useRouter } from "next/router";
 import React, { useMemo } from "react";
-import mock from "../../../mock.json";
+import mock from "../../../../mock.json";
+
+export const formatData = (data: Project) => ({
+  ...data,
+  subject: data?.subject?.name ?? "-",
+});
 
 const ProjectPage = () => {
   const {
     query: { id },
   } = useRouter();
 
-  const project = useMemo(() => mock.projects.find(({ id: projectId }) => `${projectId}` === id), [
-    id,
-  ]);
+  const project: Project = useMemo(
+    () => formatData(mock.projects.find(({ id: projectId }) => `${projectId}` === id)),
+    [id]
+  );
 
   const { name } = project ?? {};
 
