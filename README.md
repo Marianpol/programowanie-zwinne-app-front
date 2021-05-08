@@ -6,7 +6,7 @@
 2. Logowanie użytkowników
 3. <del>Dodawnie projektu/zadania/studenta</del>
 4. <del>Modyfikowanie projektu/zadania/studenta</del>
-5. Usuwanie projektu/zadania/studenta
+5. <del>Usuwanie projektu/zadania/studenta</del>
 6. <del>Stronnicowanie<del>
 7. <del>Wyszukiwanie elementów<del>
 8. Wysyłanie plików do danego projektu/zadania

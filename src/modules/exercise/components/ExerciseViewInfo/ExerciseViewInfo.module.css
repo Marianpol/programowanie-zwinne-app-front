@@ -12,3 +12,20 @@
 .description {
   margin-bottom: var(--spacing-3);
 }
+
+.deleteButton {
+  margin-right: var(--spacing-1);
+}
+
+.deleteButton svg,
+.editButton svg {
+  transition: fill 0.3s;
+}
+
+.deleteButton:hover svg {
+  fill: var(--red-1);
+}
+
+.editButton:hover svg {
+  fill: var(--green-1);
+}

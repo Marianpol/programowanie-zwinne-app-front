@@ -2,13 +2,15 @@ import firstLetters from "app/libs/firstLetters";
 import Button from "app/ui/components/Button";
 import ButtonIcon from "app/ui/components/ButtonIcon";
 import Card from "app/ui/components/Card";
+import Dialog from "app/ui/components/Dialog";
 import Text from "app/ui/components/Text";
+import DeleteIcon from "app/ui/icons/DeleteIcon";
 import EditIcon from "app/ui/icons/EditIcon";
 import ExerciseIcon from "app/ui/icons/ExerciseIcon";
 import ProjectIcon from "app/ui/icons/ProjectIcon";
 import clsx from "clsx";
 import Router from "next/router";
-import React from "react";
+import React, { useState } from "react";
 import s from "./StudentViewHeader.module.css";
 
 export interface StudentViewHeaderProps {
@@ -17,7 +19,11 @@ export interface StudentViewHeaderProps {
   onChangeTab: (tabName: string) => void;
 }
 
+const deleteUser = () => {};
+
 const StudentViewHeader = ({ user, tab, onChangeTab }: StudentViewHeaderProps) => {
+  const [open, setOpen] = useState(false);
+
   const { id, name, type } = user ?? {};
 
   const getTabClassName = (tabName: string) => clsx(s.tab, { [s.tabActive]: tabName === tab });
@@ -28,9 +34,22 @@ const StudentViewHeader = ({ user, tab, onChangeTab }: StudentViewHeaderProps) =
       <div className={s.background}></div>
 
       <ButtonIcon
+        icon={<DeleteIcon fill="var(--white-1)" width="18px" />}
+        onClick={() => setOpen(true)}
+        className={s.deleteButton}
+      />
+
+      <Dialog
+        description="Czy na pewno chcesz usunąć studenta?"
+        isOpen={open}
+        onApprove={deleteUser}
+        onClose={() => setOpen(false)}
+      />
+
+      <ButtonIcon
         icon={<EditIcon fill="var(--white-1)" width="18px" />}
-        onClick={() => Router.push(`/student/${id}/edit`)}
-        className={s.buttonIcon}
+        onClick={() => Router.push(`/exercise/${id}/edit`)}
+        className={s.editButton}
       />
 
       <div className={s.avatar}>
