@@ -12,6 +12,7 @@ export interface ButtonProps {
   textColor?: TextColor;
   textWeight?: TextWeight;
   icon?: ReactNode;
+  type?: "button" | "submit";
 }
 
 const Button = ({
@@ -23,10 +24,11 @@ const Button = ({
   textWeight = "regular",
   icon,
   className,
+  type = "button",
 }: ButtonProps) => {
   const rootClassName = clsx(s.root, className);
   return (
-    <button className={rootClassName} onClick={onClick}>
+    <button className={rootClassName} onClick={onClick} type={type}>
       <div style={{ marginRight: 8 }}>{icon}</div>
       {children ? (
         <Text upperCase size={textSize} color={textColor} align={textAlign} weight={textWeight}>

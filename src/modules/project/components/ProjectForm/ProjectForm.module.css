@@ -1,0 +1,29 @@
+.input {
+  margin-bottom: var(--spacing-3);
+}
+
+.header {
+  padding: var(--spacing-3) var(--spacing-3) var(--spacing-1) var(--spacing-3);
+}
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: var(--spacing-2);
+}
+
+.button {
+  background-color: var(--blue-1);
+  border: none;
+  padding: var(--spacing-1) var(--spacing-2);
+  border-radius: var(--border-radius-1);
+}
+
+.selectorsWrapper {
+  display: flex;
+}
+
+.selectWrapper {
+  width: calc(33.33% - 16px);
+  margin-right: var(--spacing-3);
+}

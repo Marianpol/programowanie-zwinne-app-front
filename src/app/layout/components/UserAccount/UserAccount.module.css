@@ -12,7 +12,7 @@
   top: 55px;
   right: 0;
   min-width: 200px;
-  background-color: var(--white);
+  background-color: var(--white-1);
   border: 1px solid var(--grey-1);
   border-radius: var(--border-radius-1);
   box-shadow: var(--box-shadow-1);
@@ -23,7 +23,7 @@
 }
 
 .userName {
-  background-color: var(--grey-2);
+  background-color: var(--grey-1);
   padding: var(--spacing-1) var(--spacing-3);
   color: var(--grey-5);
   border-bottom: 1px solid var(--grey-1);
@@ -42,5 +42,5 @@
 }
 
 .logout:hover {
-  background-color: var(--grey-2);
+  background-color: var(--grey-1);
 }

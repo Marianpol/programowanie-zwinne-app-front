@@ -379,5 +379,18 @@
         "fullTimeStudies": "Tak"
       }
     }
+  ],
+  "subjects": [
+    { "id": 1, "name": "Programowanie zwinne" },
+    { "id": 2, "name": "Informatyka w biznesie" },
+    { "id": 3, "name": "Matematyka" },
+    { "id": 4, "name": "Procesy stochastyczne" },
+    { "id": 5, "name": "Algorytmy genetyczne i sztuczne sieci neuronowe" },
+    { "id": 6, "name": "Programowanie urządzeń mobilnych" },
+    { "id": 7, "name": "Bazy danych" },
+    { "id": 8, "name": "Bezpieczeństwo danych" },
+    { "id": 9, "name": "Informacja naukowa" },
+    { "id": 10, "name": "Praca w środowisku wielokulturowym" },
+    { "id": 11, "name": "Język angielski" }
   ]
 }

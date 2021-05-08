@@ -35,11 +35,11 @@
 }
 
 .primaryColor {
-  color: var(--primary-color);
+  color: var(--black-2);
 }
 
 .whiteColor {
-  color: var(--white);
+  color: var(--white-1);
 }
 
 .lightGreyColor {
@@ -52,6 +52,10 @@
 
 .inheritColor {
   color: inherit;
+}
+
+.errorColor {
+  color: var(--red-1);
 }
 
 .leftTextAlign {

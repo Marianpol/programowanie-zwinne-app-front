@@ -10,12 +10,12 @@
   padding: var(--spacing-3) var(--spacing-3) var(--spacing-3) 42px;
   outline: none;
   font-size: var(--font-size-sm);
-  color: var(--primary-color);
+  color: var(--black-2);
 }
 
 .input::placeholder {
   color: var(--grey-3);
-  font-family: "Be Vietnam";
+  font-family: var(--font-family);
 }
 
 .icon {

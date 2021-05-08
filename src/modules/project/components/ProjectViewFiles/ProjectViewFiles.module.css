@@ -40,5 +40,5 @@
 }
 
 .button:hover svg {
-  fill: var(--black);
+  fill: var(--black-1);
 }

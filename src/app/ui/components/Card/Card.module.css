@@ -1,5 +1,5 @@
 .root {
-  background: var(--white);
+  background: var(--white-1);
   border-radius: var(--border-radius-1);
   border: 1px solid var(--grey-2);
   box-shadow: var(--box-shadow-1);

@@ -16,7 +16,7 @@
   text-transform: uppercase;
   font-size: var(--font-size-xs);
   color: var(--grey-6);
-  background-color: var(--white);
+  background-color: var(--white-1);
   box-shadow: var(--box-shadow-1);
   border: 1px solid var(--grey-1);
   border-right: 0;
@@ -42,7 +42,7 @@
 }
 
 .listItemActive {
-  background-color: var(--grey-1);
+  background-color: var(--white-2);
   color: var(--green-1);
 }
 
