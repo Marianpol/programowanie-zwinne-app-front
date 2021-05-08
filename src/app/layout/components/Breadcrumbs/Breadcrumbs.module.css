@@ -5,12 +5,12 @@
 .breadcrumb {
   display: flex;
   align-items: center;
-  margin-right: 16px;
+  margin-right: var(--spacing-2);
   transition: color 0.3s;
 }
 
 .breadcrumb:hover {
-  color: #00ab55;
+  color: var(--green-1);
 }
 
 .breadcrumb:not(:last-child)::after {
@@ -18,13 +18,13 @@
   display: block;
   width: 5px;
   height: 5px;
-  background-color: var(--primary-color);
-  border-radius: 50%;
-  margin-left: 16px;
+  background-color: var(--black-2);
+  border-radius: var(--border-radius-3);
+  margin-left: var(--spacing-2);
 }
 
 .breadcrumbActive {
-  color: #00ab55;
+  color: var(--green-1);
 }
 
 .breadcrumbActive a {

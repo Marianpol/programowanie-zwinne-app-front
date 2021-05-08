@@ -1,15 +1,16 @@
 import TableWrapper from "app/components/TableWrapper";
 import StudentViewHeader from "modules/student/components/StudentViewHeader";
 import StudentViewInfo from "modules/student/components/StudentViewInfo";
+import Student from "modules/student/types/Student";
+import { exercises_columns } from "pages/exercises";
+import { formatProjectsData, projects_columns } from "pages/projects";
 import React, { useState } from "react";
+import mock from "../../../../../mock.json";
 import StudentViewAdditionalInfo from "../StudentViewAdditionalInfo";
 import s from "./StudentView.module.css";
-import mock from "../../../../../mock.json";
-import { projects_columns } from "pages/projects";
-import { exercises_columns } from "pages/exercises";
 
 export interface StudentViewProps {
-  user: any;
+  user: Student;
 }
 
 const StudentView = ({ user }: StudentViewProps) => {
@@ -17,7 +18,7 @@ const StudentView = ({ user }: StudentViewProps) => {
 
   const handleChangeTab = (tabName: string) => setTab(tabName);
 
-  const data = tab === "projects" ? mock.projects : mock.exercises;
+  const data = tab === "projects" ? formatProjectsData(mock.projects) : mock.exercises;
   const columns = tab === "projects" ? projects_columns : exercises_columns;
   const url = tab === "projects" ? "/project" : "/exercise";
   const placeholder = tab === "projects" ? "Szukaj projektu..." : "Szukaj zadania...";

@@ -1,21 +1,21 @@
 .footer {
   display: flex;
-  height: 10%;
-  border-top: 1px solid #e6e6e6;
+  border-top: 1px solid var(--grey-2);
 }
 
 .input {
   border: 0;
   width: 95%;
-  padding-left: 16px;
+  padding-left: var(--spacing-3);
   outline: 0;
-  font-size: 18px;
+  font-size: var(--font-size-md);
+  border-radius: var(--border-radius-1);
 }
 
 .input::placeholder {
-  font-size: 18px;
-  color: #d0d0d0;
-  letter-spacing: 1px;
+  font-size: var(--font-size-md);
+  color: var(--grey-3);
+  letter-spacing: var(--letter-spacing-1);
 }
 
 .button {
@@ -27,5 +27,5 @@
 }
 
 .button:hover svg {
-  fill: #000;
+  fill: var(--black-1);
 }

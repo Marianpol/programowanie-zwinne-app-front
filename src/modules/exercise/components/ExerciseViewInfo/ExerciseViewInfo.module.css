@@ -1,0 +1,14 @@
+.leftSide {
+  width: calc(40% - 16px);
+  margin-right: var(--spacing-3);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-3);
+}
+
+.description {
+  margin-bottom: var(--spacing-3);
+}

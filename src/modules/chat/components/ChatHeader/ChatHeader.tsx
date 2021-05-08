@@ -4,9 +4,11 @@ import s from "./ChatHeader.module.css";
 
 const ChatHeader = () => {
   return (
-    <Text weight="medium" size="large" className={s.header}>
-      Czat
-    </Text>
+    <div className={s.header}>
+      <Text weight="medium" size="large">
+        Czat
+      </Text>
+    </div>
   );
 };
 

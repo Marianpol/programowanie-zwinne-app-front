@@ -2,6 +2,7 @@ import TableWrapper from "app/components/TableWrapper";
 import Page from "app/layout/components/Page";
 import IBreadcrumbs from "app/layout/types/breadcrumbs";
 import Columns from "app/types/Columns";
+import Student from "modules/student/types/Student";
 import React from "react";
 import mock from "../../mock.json";
 
@@ -18,10 +19,12 @@ const breadcrumbs: IBreadcrumbs[] = [
 ];
 
 const StudentsPage = () => {
+  const students: Student[] = mock.students;
+
   return (
     <Page title="Lista studentów" breadcrumbs={breadcrumbs}>
       <TableWrapper
-        data={mock.students}
+        data={students}
         columns={students_columns}
         url="/student"
         placeholder="Szukaj studenta..."

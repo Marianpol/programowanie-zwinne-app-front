@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import React, { ReactNode } from "react";
+import React, { CSSProperties, ReactNode } from "react";
 import s from "./Text.module.css";
 
 export interface TextProps {
@@ -10,6 +10,7 @@ export interface TextProps {
   color?: TextColor;
   align?: TextAlign;
   upperCase?: boolean;
+  style?: CSSProperties;
 }
 
 const Text = ({
@@ -20,6 +21,7 @@ const Text = ({
   align = "left",
   className,
   upperCase,
+  style,
 }: TextProps) => {
   const rootClassName = clsx(className, {
     [s.verySmallSize]: size === "very-small",
@@ -35,13 +37,18 @@ const Text = ({
     [s.whiteColor]: color === "white",
     [s.greyColor]: color === "grey",
     [s.lightGreyColor]: color === "light-grey",
+    [s.errorColor]: color === "error",
     [s.inheritColor]: color === "inherit",
     [s.leftTextAlign]: align === "left",
     [s.rightTextAlign]: align === "right",
     [s.centerTextAlign]: align === "center",
     [s.upperCase]: upperCase,
   });
-  return <div className={rootClassName}>{children}</div>;
+  return (
+    <div className={rootClassName} style={style}>
+      {children}
+    </div>
+  );
 };
 
 export default Text;

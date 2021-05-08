@@ -8,18 +8,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #fff;
-  border-radius: 5px;
-  border: 1px solid #e6e6e6;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.02), 0 3px 6px rgba(0, 0, 0, 0.04);
-  padding: 16px;
+  background-color: var(--white-1);
+  border-radius: var(--border-radius-1);
+  border: 1px solid var(--grey-2);
+  box-shadow: var(--box-shadow-1);
+  padding: var(--spacing-3);
   flex: 1 1;
 }
 
 .tab:not(:last-child) {
-  margin-bottom: 16px;
+  margin-bottom: var(--spacing-3);
 }
 
 .tabActive {
-  color: #00ab55;
+  color: var(--green-1);
 }

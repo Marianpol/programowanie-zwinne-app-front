@@ -1,4 +1,5 @@
 import TableWrapper from "app/components/TableWrapper";
+import Project from "modules/project/types/Project";
 import { exercises_columns } from "pages/exercises";
 import { students_columns } from "pages/students";
 import React, { useState } from "react";
@@ -9,7 +10,7 @@ import ProjectViewTabs, { ProjectViewTabTypes } from "../ProjectViewTabs";
 import s from "./ProjectView.module.css";
 
 export interface ProjectViewProps {
-  project: any;
+  project: Project;
 }
 
 const dataExercises = mock.exercises;

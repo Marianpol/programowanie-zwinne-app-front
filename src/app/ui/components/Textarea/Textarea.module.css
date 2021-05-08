@@ -1,0 +1,39 @@
+.root {
+  position: relative;
+}
+
+.textarea {
+  padding: var(--spacing-3);
+  border: 1px solid var(--grey-3);
+  border-radius: var(--border-radius-1);
+  font-family: var(--font-family);
+}
+
+.textarea:focus {
+  border: 1px solid var(--blue-2);
+}
+
+.textarea:focus + .label {
+  color: var(--blue-2);
+}
+
+.label {
+  position: absolute;
+  cursor: text;
+  z-index: 2;
+  top: -16px;
+  left: 8px;
+  font-size: 12px;
+  background: #fff;
+  padding: 6px 10px;
+  color: var(--grey-5);
+  transition: all 0.3s ease;
+}
+
+.error {
+  border: 1px solid var(--red-1);
+}
+
+.fullWidth {
+  width: 100%;
+}

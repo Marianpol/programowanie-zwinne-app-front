@@ -1,7 +1,7 @@
 .table {
   height: 100%;
   overflow-y: scroll;
-  margin-top: 8px;
+  margin-top: var(--spacing-1);
 }
 
 .card {
@@ -12,5 +12,5 @@
 }
 
 .search {
-  margin-bottom: 16px;
+  margin-bottom: var(--spacing-2);
 }

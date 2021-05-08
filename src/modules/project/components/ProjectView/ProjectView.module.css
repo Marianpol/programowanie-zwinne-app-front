@@ -8,7 +8,7 @@
   flex-direction: column;
   width: 25%;
   height: 100%;
-  margin-right: 16px;
+  margin-right: var(--spacing-3);
 }
 
 .rightSide {

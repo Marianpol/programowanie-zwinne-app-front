@@ -3,7 +3,7 @@
   top: 0;
   right: 0;
   cursor: pointer;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.02), 0 3px 6px rgba(0, 0, 0, 0.04);
+  box-shadow: var(--box-shadow-1);
   border: none;
 }
 
@@ -12,10 +12,10 @@
   top: 55px;
   right: 0;
   min-width: 200px;
-  background-color: #fff;
-  border: 1px solid #e6e6e6;
-  border-radius: 5px;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.02), 0 3px 6px rgba(0, 0, 0, 0.04);
+  background-color: var(--white-1);
+  border: 1px solid var(--grey-1);
+  border-radius: var(--border-radius-1);
+  box-shadow: var(--box-shadow-1);
 }
 
 .popupMenu > div {
@@ -23,10 +23,10 @@
 }
 
 .userName {
-  background-color: #efefef;
-  padding: 8px 16px;
-  color: #707070;
-  border-bottom: 1px solid #e6e6e6;
+  background-color: var(--grey-1);
+  padding: var(--spacing-1) var(--spacing-3);
+  color: var(--grey-5);
+  border-bottom: 1px solid var(--grey-1);
 }
 
 .logout {
@@ -38,9 +38,9 @@
   display: block;
   width: 100%;
   height: 100%;
-  padding: 8px 16px;
+  padding: var(--spacing-1) var(--spacing-3);
 }
 
 .logout:hover {
-  background-color: #efefef;
+  background-color: var(--grey-1);
 }

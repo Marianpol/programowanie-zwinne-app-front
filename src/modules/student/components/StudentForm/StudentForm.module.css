@@ -1,0 +1,19 @@
+.input {
+  margin-bottom: var(--spacing-3);
+}
+
+.header {
+  padding: var(--spacing-3) var(--spacing-3) var(--spacing-1) var(--spacing-3);
+}
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.button {
+  background-color: var(--blue-1);
+  border: none;
+  padding: var(--spacing-1) var(--spacing-2);
+  border-radius: var(--border-radius-1);
+}

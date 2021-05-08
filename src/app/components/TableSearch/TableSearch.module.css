@@ -4,18 +4,18 @@
 
 .input {
   width: 100%;
-  border: 1px solid #e6e6e6;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.02), 0 3px 6px rgba(0, 0, 0, 0.04);
-  border-radius: 5px;
-  padding: 16px 16px 16px 42px;
+  border: 1px solid var(--grey-1);
+  box-shadow: var(--box-shadow-1);
+  border-radius: var(--border-radius-1);
+  padding: var(--spacing-3) var(--spacing-3) var(--spacing-3) 42px;
   outline: none;
-  font-size: 16px;
-  color: var(--primary-color);
+  font-size: var(--font-size-sm);
+  color: var(--black-2);
 }
 
 .input::placeholder {
-  color: #d3d3d3;
-  font-family: "Be Vietnam";
+  color: var(--grey-3);
+  font-family: var(--font-family);
 }
 
 .icon {
