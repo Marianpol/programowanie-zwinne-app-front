@@ -26,3 +26,13 @@
   width: calc(33.33% - 16px);
   margin-right: var(--spacing-3);
 }
+
+@media (max-width: 1280px) {
+  .selectorsWrapper {
+    flex-direction: column;
+  }
+
+  .selectWrapper {
+    width: 100%;
+  }
+}

@@ -29,3 +29,9 @@
 .button:hover svg {
   fill: var(--black-1);
 }
+
+@media (max-width: 1280px) {
+  .button {
+    width: 50px;
+  }
+}

@@ -8,3 +8,24 @@
   flex-direction: column;
   width: 60%;
 }
+
+.leftSide {
+  width: calc(40% - 16px);
+  margin-right: var(--spacing-3);
+}
+
+@media (max-width: 1280px) {
+  .root {
+    flex-direction: column;
+  }
+
+  .leftSide {
+    margin-right: unset;
+    margin-bottom: var(--spacing-3);
+  }
+
+  .rightSide,
+  .leftSide {
+    width: 100%;
+  }
+}

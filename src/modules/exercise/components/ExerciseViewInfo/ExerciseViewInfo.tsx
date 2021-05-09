@@ -23,7 +23,7 @@ const ExerciseViewInfo = ({ exercise }: ExerciseViewInfoProps) => {
   const createDate = new Date().toLocaleDateString();
 
   return (
-    <Card className={s.leftSide}>
+    <Card>
       <CardContent>
         <div className={s.header}>
           <div>

@@ -50,3 +50,9 @@
 .listItem span:hover {
   color: var(--green-1);
 }
+
+@media (max-width: 1280px) {
+  .nav {
+    display: none;
+  }
+}

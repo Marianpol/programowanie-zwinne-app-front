@@ -31,14 +31,14 @@
   ],
   "projects": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Przykładowa nazwa projektu Lorem",
-      "subject": { "id": 1, "name": "Programowanie zwinne" },
+      "subject": { "id": "1", "name": "Programowanie zwinne" },
       "status": true,
       "createDate": "createDate",
       "exercises": [
         {
-          "id": 1,
+          "id": "1",
           "name": "Przykładowa nazwa zadania",
           "description": "Ut et sagittis eros, quis pellentesque enim. Nulla nec orci malesuada, bibendum metus non, finibus mauris. Cras eleifend mi erat, ultrices accumsan mi faucibus vel. Nulla sed eleifend felis, at faucibus nunc.",
           "createDate": "createDate"
@@ -46,7 +46,7 @@
       ],
       "users": [
         {
-          "id": 25,
+          "id": "1",
           "name": "Marcin Musiał",
           "indexNumber": "123456",
           "email": "marmus002@utp.edu.pl",
@@ -55,11 +55,11 @@
       ],
       "files": [
         {
-          "id": 1,
+          "id": "1",
           "name": "Nazwa pliku",
           "createDate": "createDate",
           "author": {
-            "id": 2,
+            "id": "2",
             "name": "Bartosz Ropejko",
             "indexNumber": "98765",
             "email": "barrop000@utp.edu.pl",
@@ -67,11 +67,11 @@
           }
         },
         {
-          "id": 2,
+          "id": "2",
           "name": "Lorem ipsum plik",
           "createDate": "createDate",
           "author": {
-            "id": 3,
+            "id": "3",
             "name": "Piotr Czapiewski",
             "indexNumber": "567933",
             "email": "piocza001@utp.edu.pl",
@@ -81,41 +81,41 @@
       ]
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Przykładowa nazwa projektu Ipsum",
-      "subject": { "id": 1, "name": "Programowanie zwinne" },
+      "subject": { "id": "1", "name": "Programowanie zwinne" },
       "status": false,
       "createDate": "createDate",
       "files": []
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Przykładowa nazwa projektu Test",
-      "subject": { "id": 1, "name": "Programowanie zwinne" },
+      "subject": { "id": "1", "name": "Programowanie zwinne" },
       "status": false,
       "createDate": "createDate",
       "files": []
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Przykładowa nazwa projektu Wyszukiwarki",
-      "subject": { "id": 1, "name": "Programowanie zwinne" },
+      "subject": { "id": "1", "name": "Programowanie zwinne" },
       "status": true,
       "createDate": "createDate",
       "files": []
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "Przykładowa nazwa projektu DDD",
-      "subject": { "id": 1, "name": "Programowanie zwinne" },
+      "subject": { "id": "1", "name": "Programowanie zwinne" },
       "status": true,
       "createDate": "createDate",
       "files": []
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "Przykładowa nazwa projektu DDDZ",
-      "subject": { "id": 1, "name": "Programowanie zwinne" },
+      "subject": { "id": "1", "name": "Programowanie zwinne" },
       "status": false,
       "createDate": "createDate",
       "files": []
@@ -137,11 +137,11 @@
   ],
   "messages": [
     {
-      "id": 1,
+      "id": "1",
       "message": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita itaque cumque, voluptas totam consectetur, necessitatibus nostrum molestias.",
       "createDate": "createDate",
       "author": {
-        "id": 1,
+        "id": "1",
         "name": "Marcin Musiał",
         "indexNumber": "123456",
         "email": "marmus002@utp.edu.pl",
@@ -149,11 +149,11 @@
       }
     },
     {
-      "id": 2,
+      "id": "2",
       "message": "Ut et sagittis eros, quis pellentesque enim. Nulla nec orci malesuada, bibendum metus non, finibus mauris.",
       "createDate": "createDate",
       "author": {
-        "id": 2,
+        "id": "2",
         "name": "Bartosz Ropejko",
         "indexNumber": "98765",
         "email": "barrop000@utp.edu.pl",
@@ -161,11 +161,11 @@
       }
     },
     {
-      "id": 3,
+      "id": "3",
       "message": "Morbi ut finibus odio. Vivamus vel nisi lectus. Sed in ligula facilisis, interdum leo id, dictum mauris. Nunc id risus nisl. Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita itaque cumque, voluptas totam consectetur, necessitatibus nostrum molestias.",
       "createDate": "createDate",
       "author": {
-        "id": 3,
+        "id": "3",
         "name": "Piotr Czapiewski",
         "indexNumber": "567933",
         "email": "piocza001@utp.edu.pl",
@@ -173,7 +173,7 @@
       }
     },
     {
-      "id": 4,
+      "id": "4",
       "message": "Pellentesque vitae consectetur mi. Cras eleifend tempus laoreet. Maecenas eget est lacinia, tristique urna dictum, auctor enim. In interdum justo ultrices, volutpat ligula vitae, dapibus nibh. Integer vel mollis metus, eget rhoncus turpis. Quisque sollicitudin aliquam arcu.",
       "createDate": "createDate",
       "author": {
@@ -185,10 +185,10 @@
       }
     },
     {
-      "id": 5,
+      "id": "5",
       "message": "Ut et sagittis eros, quis pellentesque enim. Nulla nec orci malesuada, bibendum metus non, finibus mauris.",
       "author": {
-        "id": 2,
+        "id": "2",
         "name": "Bartosz Ropejko",
         "indexNumber": "98765",
         "email": "barrop000@utp.edu.pl",
@@ -196,10 +196,10 @@
       }
     },
     {
-      "id": 6,
+      "id": "6",
       "message": "Morbi ut finibus odio. Vivamus vel nisi lectus. Sed in ligula facilisis, interdum leo id, dictum mauris. Nunc id risus nisl. Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita itaque cumque, voluptas totam consectetur, necessitatibus nostrum molestias.",
       "author": {
-        "id": 3,
+        "id": "3",
         "name": "Piotr Czapiewski",
         "indexNumber": "567933",
         "email": "piocza001@utp.edu.pl",
@@ -208,16 +208,16 @@
     }
   ],
   "subjects": [
-    { "id": 1, "name": "Programowanie zwinne" },
-    { "id": 2, "name": "Informatyka w biznesie" },
-    { "id": 3, "name": "Matematyka" },
-    { "id": 4, "name": "Procesy stochastyczne" },
-    { "id": 5, "name": "Algorytmy genetyczne i sztuczne sieci neuronowe" },
-    { "id": 6, "name": "Programowanie urządzeń mobilnych" },
-    { "id": 7, "name": "Bazy danych" },
-    { "id": 8, "name": "Bezpieczeństwo danych" },
-    { "id": 9, "name": "Informacja naukowa" },
-    { "id": 10, "name": "Praca w środowisku wielokulturowym" },
-    { "id": 11, "name": "Język angielski" }
+    { "id": "1", "name": "Programowanie zwinne" },
+    { "id": "2", "name": "Informatyka w biznesie" },
+    { "id": "3", "name": "Matematyka" },
+    { "id": "4", "name": "Procesy stochastyczne" },
+    { "id": "5", "name": "Algorytmy genetyczne i sztuczne sieci neuronowe" },
+    { "id": "6", "name": "Programowanie urządzeń mobilnych" },
+    { "id": "7", "name": "Bazy danych" },
+    { "id": "8", "name": "Bezpieczeństwo danych" },
+    { "id": "9", "name": "Informacja naukowa" },
+    { "id": "10", "name": "Praca w środowisku wielokulturowym" },
+    { "id": "11", "name": "Język angielski" }
   ]
 }

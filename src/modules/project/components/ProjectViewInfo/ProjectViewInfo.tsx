@@ -50,7 +50,7 @@ const ProjectViewInfo = ({ project }: StudentViewInfoProps) => {
 
             <ButtonIcon
               icon={<EditIcon fill="var(--blue-1)" width="18px" />}
-              onClick={() => Router.push(`/exercise/${id}/edit`)}
+              onClick={() => Router.push(`/project/${id}/edit`)}
               className={s.editButton}
             />
           </div>

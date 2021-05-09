@@ -19,3 +19,19 @@
   flex-direction: column;
   width: 70%;
 }
+
+@media (max-width: 1280px) {
+  .root {
+    flex-direction: column;
+  }
+
+  .leftSide {
+    margin-right: unset;
+    margin-bottom: var(--spacing-3);
+  }
+
+  .rightSide,
+  .leftSide {
+    width: 100%;
+  }
+}

@@ -48,7 +48,7 @@ const StudentViewHeader = ({ user, tab, onChangeTab }: StudentViewHeaderProps) =
 
       <ButtonIcon
         icon={<EditIcon fill="var(--white-1)" width="18px" />}
-        onClick={() => Router.push(`/exercise/${id}/edit`)}
+        onClick={() => Router.push(`/student/${id}/edit`)}
         className={s.editButton}
       />
 

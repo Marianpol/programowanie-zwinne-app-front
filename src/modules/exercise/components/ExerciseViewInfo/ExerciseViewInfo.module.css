@@ -1,8 +1,3 @@
-.leftSide {
-  width: calc(40% - 16px);
-  margin-right: var(--spacing-3);
-}
-
 .header {
   display: flex;
   justify-content: space-between;

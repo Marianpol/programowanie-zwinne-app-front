@@ -79,3 +79,9 @@
 .tabActive {
   color: var(--green-1);
 }
+
+@media (max-width: 1280px) {
+  .root {
+    height: 150px;
+  }
+}

@@ -57,7 +57,7 @@ const StudentViewInfo = ({ user }: StudentViewInfoProps) => {
             <Text upperCase size="small" color="grey">
               Studia stacjonarne
             </Text>
-            <Text>{fullTimeStudies ?? "-"}</Text>
+            <Text>{fullTimeStudies ? "Tak" : "Nie"}</Text>
           </div>
         </div>
       </CardContent>

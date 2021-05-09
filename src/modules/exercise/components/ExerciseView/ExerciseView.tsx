@@ -18,7 +18,9 @@ const ExerciseView = ({ exercise }: ExerciseViewProps) => {
 
   return (
     <div className={s.root}>
-      <ExerciseViewInfo exercise={exercise} />
+      <div className={s.leftSide}>
+        <ExerciseViewInfo exercise={exercise} />
+      </div>
 
       <div className={s.rightSide}>
         <TableWrapper data={data} columns={columns} url={url} placeholder={placeholder} />
