@@ -1,15 +1,16 @@
+import ILogin from "app/types/Login";
 import Button from "app/ui/components/Button";
 import Card from "app/ui/components/Card";
 import Input from "app/ui/components/Input";
 import Text from "app/ui/components/Text";
 import Router from "next/router";
-import React, { useState } from "react";
+import React, { ChangeEvent, useState } from "react";
 import ErrorTag from "../ErrorTag";
 import Form from "../Form";
 import s from "./Login.module.css";
 
 const Login = () => {
-  const [values, setValues] = useState<any>({
+  const [values, setValues] = useState<ILogin>({
     username: "",
     password: "",
   });
@@ -21,7 +22,7 @@ const Login = () => {
 
   const { username, password } = values;
 
-  const handleSubmit = (event: any) => {
+  const handleSubmit = (event: ChangeEvent<HTMLFormElement>) => {
     event.preventDefault();
     setError({
       username: !username.length,
@@ -33,10 +34,15 @@ const Login = () => {
     }
   };
 
-  const handleChange = (event: any, type: string) =>
-    setValues({ ...values, [type]: event.target.value });
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const name = event.target.name;
+    setValues({ ...values, [name]: event.target.value });
+  };
 
-  const handleBlur = (type: string) => () => setError({ ...error, [type]: !values[type].length });
+  const handleBlur = (event: ChangeEvent<HTMLInputElement>) => () => {
+    const name = event.target.name;
+    setError({ ...error, [name]: !values[name].length });
+  };
 
   return (
     <div className={s.root}>
@@ -52,8 +58,8 @@ const Login = () => {
             placeholder="Login"
             label="Login"
             value={username}
-            onChange={(event) => handleChange(event, "username")}
-            onBlur={handleBlur("username")}
+            onChange={handleChange}
+            onBlur={handleBlur}
             error={error.username}
             className={s.input}
             fullWidth
@@ -67,8 +73,8 @@ const Login = () => {
             placeholder="Hasło"
             label="Hasło"
             value={password}
-            onChange={(event) => handleChange(event, "password")}
-            onBlur={handleBlur("password")}
+            onChange={handleChange}
+            onBlur={handleBlur}
             error={error.password}
             className={s.input}
             fullWidth

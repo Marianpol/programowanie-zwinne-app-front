@@ -2,7 +2,7 @@ import clsx from "clsx";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
-import { INavigation } from "../Navigation";
+import { INavigation, ISubNavigation } from "../Navigation";
 import s from "./SubNavigation.module.css";
 
 export interface SubNavigationProps extends INavigation {
@@ -19,7 +19,7 @@ const SubNavigation = ({ id, href, subNavItems, subListActive }: SubNavigationPr
 
   return canRenderSubNav ? (
     <ul className={s.subList}>
-      {subNavItems?.map(({ id, href, label }: any) => (
+      {subNavItems?.map(({ id, href, label }: ISubNavigation) => (
         <li key={id} className={getSubListItemClassName(href)}>
           <Link href={href}>{label}</Link>
         </li>

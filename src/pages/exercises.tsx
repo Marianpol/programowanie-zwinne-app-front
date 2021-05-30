@@ -4,10 +4,10 @@ import IBreadcrumbs from "app/layout/types/breadcrumbs";
 import Columns from "app/types/Columns";
 import Exercise from "modules/exercise/types/Exercise";
 import React from "react";
-import mock from "../../mock.json";
+import useSWR from "swr";
 
 export const exercises_columns: Columns[] = [
-  { label: "Nazwa zadania", accessor: "name", options: { avatarAccessor: "name", width: "25%" } },
+  { label: "Nazwa zadania", accessor: "name", options: { width: "25%" } },
   { label: "Opis zadania", accessor: "description", options: { width: "60%" } },
   { label: "Data utworzenia", accessor: "createDate", options: { format: "date", width: "15%" } },
 ];
@@ -18,7 +18,10 @@ const breadcrumbs: IBreadcrumbs[] = [
 ];
 
 const ExercisesPage = () => {
-  const exercises: Exercise[] = mock.exercises;
+  const { data: exercises, error } = useSWR<Exercise[]>("http://localhost:8080/api/exercise");
+
+  if (error) return <div>failed to load</div>;
+  if (!exercises) return <div>loading...</div>;
 
   return (
     <Page title="Lista zadań" breadcrumbs={breadcrumbs}>

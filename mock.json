@@ -6,27 +6,6 @@
       "indexNumber": "123456",
       "email": "marmus002@utp.edu.pl",
       "fullTimeStudies": true
-    },
-    {
-      "id": "2",
-      "name": "Bartosz Ropejko",
-      "indexNumber": "98765",
-      "email": "barrop000@utp.edu.pl",
-      "fullTimeStudies": true
-    },
-    {
-      "id": "3",
-      "name": "Piotr Czapiewski",
-      "indexNumber": "567933",
-      "email": "piocza001@utp.edu.pl",
-      "fullTimeStudies": true
-    },
-    {
-      "id": "4",
-      "name": "Mateusz Matysiak",
-      "indexNumber": "109542",
-      "email": "matmat008@utp.edu.pl",
-      "fullTimeStudies": true
     }
   ],
   "projects": [
@@ -81,40 +60,8 @@
       ]
     },
     {
-      "id": "2",
+      "id": "1",
       "name": "Przykładowa nazwa projektu Ipsum",
-      "subject": { "id": "1", "name": "Programowanie zwinne" },
-      "status": false,
-      "createDate": "createDate",
-      "files": []
-    },
-    {
-      "id": "3",
-      "name": "Przykładowa nazwa projektu Test",
-      "subject": { "id": "1", "name": "Programowanie zwinne" },
-      "status": false,
-      "createDate": "createDate",
-      "files": []
-    },
-    {
-      "id": "4",
-      "name": "Przykładowa nazwa projektu Wyszukiwarki",
-      "subject": { "id": "1", "name": "Programowanie zwinne" },
-      "status": true,
-      "createDate": "createDate",
-      "files": []
-    },
-    {
-      "id": "5",
-      "name": "Przykładowa nazwa projektu DDD",
-      "subject": { "id": "1", "name": "Programowanie zwinne" },
-      "status": true,
-      "createDate": "createDate",
-      "files": []
-    },
-    {
-      "id": "6",
-      "name": "Przykładowa nazwa projektu DDDZ",
       "subject": { "id": "1", "name": "Programowanie zwinne" },
       "status": false,
       "createDate": "createDate",
@@ -126,12 +73,6 @@
       "id": "1",
       "name": "Przykładowa nazwa zadania",
       "description": "Ut et sagittis eros, quis pellentesque enim. Nulla nec orci malesuada, bibendum metus non, finibus mauris. Cras eleifend mi erat, ultrices accumsan mi faucibus vel. Nulla sed eleifend felis, at faucibus nunc.",
-      "createDate": "createDate"
-    },
-    {
-      "id": "2",
-      "name": "Przykładowa nazwa zadania 222",
-      "description": "Ut et sagittis eros, quis pellentesque enim. Nulla nec orci malesuada, bibendum metus non.",
       "createDate": "createDate"
     }
   ],
@@ -145,64 +86,6 @@
         "name": "Marcin Musiał",
         "indexNumber": "123456",
         "email": "marmus002@utp.edu.pl",
-        "fullTimeStudies": true
-      }
-    },
-    {
-      "id": "2",
-      "message": "Ut et sagittis eros, quis pellentesque enim. Nulla nec orci malesuada, bibendum metus non, finibus mauris.",
-      "createDate": "createDate",
-      "author": {
-        "id": "2",
-        "name": "Bartosz Ropejko",
-        "indexNumber": "98765",
-        "email": "barrop000@utp.edu.pl",
-        "fullTimeStudies": true
-      }
-    },
-    {
-      "id": "3",
-      "message": "Morbi ut finibus odio. Vivamus vel nisi lectus. Sed in ligula facilisis, interdum leo id, dictum mauris. Nunc id risus nisl. Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita itaque cumque, voluptas totam consectetur, necessitatibus nostrum molestias.",
-      "createDate": "createDate",
-      "author": {
-        "id": "3",
-        "name": "Piotr Czapiewski",
-        "indexNumber": "567933",
-        "email": "piocza001@utp.edu.pl",
-        "fullTimeStudies": true
-      }
-    },
-    {
-      "id": "4",
-      "message": "Pellentesque vitae consectetur mi. Cras eleifend tempus laoreet. Maecenas eget est lacinia, tristique urna dictum, auctor enim. In interdum justo ultrices, volutpat ligula vitae, dapibus nibh. Integer vel mollis metus, eget rhoncus turpis. Quisque sollicitudin aliquam arcu.",
-      "createDate": "createDate",
-      "author": {
-        "id": 4,
-        "name": "Mateusz Matysiak",
-        "indexNumber": "109542",
-        "email": "matmat008@utp.edu.pl",
-        "fullTimeStudies": true
-      }
-    },
-    {
-      "id": "5",
-      "message": "Ut et sagittis eros, quis pellentesque enim. Nulla nec orci malesuada, bibendum metus non, finibus mauris.",
-      "author": {
-        "id": "2",
-        "name": "Bartosz Ropejko",
-        "indexNumber": "98765",
-        "email": "barrop000@utp.edu.pl",
-        "fullTimeStudies": true
-      }
-    },
-    {
-      "id": "6",
-      "message": "Morbi ut finibus odio. Vivamus vel nisi lectus. Sed in ligula facilisis, interdum leo id, dictum mauris. Nunc id risus nisl. Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita itaque cumque, voluptas totam consectetur, necessitatibus nostrum molestias.",
-      "author": {
-        "id": "3",
-        "name": "Piotr Czapiewski",
-        "indexNumber": "567933",
-        "email": "piocza001@utp.edu.pl",
         "fullTimeStudies": true
       }
     }

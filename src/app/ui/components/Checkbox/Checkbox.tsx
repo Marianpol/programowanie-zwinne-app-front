@@ -1,11 +1,11 @@
 import clsx from "clsx";
-import React from "react";
+import React, { ChangeEvent } from "react";
 import s from "./Checkbox.module.css";
 
 export interface CheckboxProps {
   name: string;
   checked: boolean;
-  onChange: (event: any) => void;
+  onChange: (event: ChangeEvent<HTMLInputElement>) => void;
   label?: string;
   className?: string;
 }

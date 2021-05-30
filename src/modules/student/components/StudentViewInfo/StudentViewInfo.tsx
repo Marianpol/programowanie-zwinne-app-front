@@ -5,11 +5,12 @@ import BookIcon from "app/ui/icons/BookIcon";
 import EmailIcon from "app/ui/icons/EmailIcon";
 import LocationIcon from "app/ui/icons/LocationIcon";
 import UserIcon from "app/ui/icons/UserIcon";
+import Student from "modules/student/types/Student";
 import React from "react";
 import s from "./StudentViewInfo.module.css";
 
 export interface StudentViewInfoProps {
-  user: any;
+  user: Student;
 }
 
 const StudentViewInfo = ({ user }: StudentViewInfoProps) => {

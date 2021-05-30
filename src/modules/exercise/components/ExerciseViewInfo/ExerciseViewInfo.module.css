@@ -4,10 +4,6 @@
   margin-bottom: var(--spacing-3);
 }
 
-.description {
-  margin-bottom: var(--spacing-3);
-}
-
 .deleteButton {
   margin-right: var(--spacing-1);
 }

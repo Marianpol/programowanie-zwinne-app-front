@@ -1,9 +1,9 @@
 import SearchIcon from "app/ui/icons/SearchIcon";
-import React, { CSSProperties } from "react";
+import React, { ChangeEvent, CSSProperties } from "react";
 import s from "./TableSearch.module.css";
 
 export interface TableSearchProps {
-  onChange: (event: any) => void;
+  onChange: (event: ChangeEvent<HTMLInputElement>) => void;
   placeholder?: string;
   style?: CSSProperties;
 }

@@ -4,7 +4,7 @@ import ProjectView from "modules/project/components/ProjectView";
 import Project from "modules/project/types/Project";
 import { useRouter } from "next/router";
 import React, { useMemo } from "react";
-import mock from "../../../../mock.json";
+import useSWR from "swr";
 
 export const formatData = (data: Project) => ({
   ...data,
@@ -16,10 +16,7 @@ const ProjectPage = () => {
     query: { id },
   } = useRouter();
 
-  const project: Project = useMemo(
-    () => formatData(mock.projects.find(({ id: projectId }) => `${projectId}` === id)),
-    [id]
-  );
+  const { data: project, error } = useSWR(id ? `http://localhost:8080/api/project/${id}` : null);
 
   const { name } = project ?? {};
 
@@ -33,6 +30,9 @@ const ProjectPage = () => {
   );
 
   const title = useMemo(() => name ?? "-", [name]);
+
+  if (error) return <div>{error.message}</div>;
+  if (!project) return <div>loading...</div>;
 
   return (
     <Page title={title} breadcrumbs={breadcrumbs}>

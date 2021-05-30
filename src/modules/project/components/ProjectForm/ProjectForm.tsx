@@ -7,25 +7,19 @@ import Input from "app/ui/components/Input";
 import Select from "app/ui/components/Select";
 import Text from "app/ui/components/Text";
 import Project from "modules/project/types/Project";
-import React, { useState } from "react";
+import React, { ChangeEvent, useState } from "react";
+import useSWR from "swr";
 import mock from "../../../../../mock.json";
 import s from "./ProjectForm.module.css";
 
 export interface ProjectFormProps {
-  initialValues?: Project;
+  initialValues: Project;
+  onSubmit: (data: Project) => void;
   isEdit?: boolean;
 }
 
-const ProjectForm = ({ initialValues, isEdit }: ProjectFormProps) => {
-  const [values, setValues] = useState<Omit<Project, "id" | "createDate">>({
-    name: "",
-    subject: "",
-    status: true,
-    exercises: [],
-    users: [],
-    files: [],
-    ...initialValues,
-  });
+const ProjectForm = ({ initialValues, isEdit, onSubmit }: ProjectFormProps) => {
+  const [values, setValues] = useState<Project>(initialValues);
 
   const [error, setError] = useState({
     name: false,
@@ -34,9 +28,9 @@ const ProjectForm = ({ initialValues, isEdit }: ProjectFormProps) => {
     users: false,
   });
 
-  const { name, subject, status, exercises, users, files } = values;
+  const { name, subject, status, exercises, users } = values;
 
-  const handleSubmit = (event: any) => {
+  const handleSubmit = async (event: ChangeEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     setError({
@@ -47,25 +41,33 @@ const ProjectForm = ({ initialValues, isEdit }: ProjectFormProps) => {
     });
 
     if (name.length && subject.length && exercises.length && users.length) {
-      console.log(values);
+      onSubmit && onSubmit(values);
     }
   };
 
-  const handleBlur = (type: string) => () => setError({ ...error, [type]: !values[type].length });
+  const handleBlur = (event: ChangeEvent<HTMLInputElement>) => () => {
+    const name = event.target.name;
+    setError({ ...error, [name]: !values[type].length });
+  };
 
-  const handleChange = (event: any, type: string) =>
-    setValues({ ...values, [type]: event.target.value });
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const name = event.target.name;
+    setValues({ ...values, [name]: event.target.value });
+  };
 
-  const handleChangeSelect = (event: any, type: string) => {
-    if (!values[type].includes(event.target.value)) {
-      setValues({ ...values, [type]: [...values[type], event.target.value] });
+  const handleChangeSelect = (event: ChangeEvent<HTMLSelectElement>) => {
+    const name = event.target.name;
+    if (!values[name].includes(event.target.value)) {
+      setValues({ ...values, [name]: [...values[name], event.target.value] });
     } else {
       setValues({
         ...values,
-        [type]: values[type].filter((exercise: string) => exercise !== event.target.value),
+        [name]: values[name].filter((exercise: string) => exercise !== event.target.value),
       });
     }
   };
+
+  const { data: subjects = [] } = useSWR("http://localhost:8080/api/subject");
 
   return (
     <Card>
@@ -81,8 +83,8 @@ const ProjectForm = ({ initialValues, isEdit }: ProjectFormProps) => {
           label="Nazwa projektu"
           name="name"
           value={name}
-          onChange={(event) => handleChange(event, "name")}
-          onBlur={handleBlur("name")}
+          onChange={handleChange}
+          onBlur={handleBlur}
           className={s.input}
           error={error.name}
           fullWidth
@@ -95,15 +97,15 @@ const ProjectForm = ({ initialValues, isEdit }: ProjectFormProps) => {
           placeholder="Przedmiot"
           name="subject"
           value={subject}
-          onChange={(event) => handleChange(event, "subject")}
-          onBlur={handleBlur("subject")}
+          onChange={handleChange}
+          onBlur={handleBlur}
           className={s.input}
           error={error.subject}
           fullWidth
           required
         >
           <option value="">Wybierz przedmiot</option>
-          {mock.subjects.map(({ id, name }: any) => (
+          {subjects.map(({ id, name }: { id: string; name: string }) => (
             <option key={id} value={id}>
               {name}
             </option>
@@ -118,8 +120,8 @@ const ProjectForm = ({ initialValues, isEdit }: ProjectFormProps) => {
               label="Zadania"
               name="exercises"
               value={exercises}
-              onChange={(event) => handleChangeSelect(event, "exercises")}
-              onBlur={handleBlur("exercises")}
+              onChange={handleChangeSelect}
+              onBlur={handleBlur}
               className={s.input}
               error={error.exercises}
               fullWidth
@@ -141,8 +143,8 @@ const ProjectForm = ({ initialValues, isEdit }: ProjectFormProps) => {
               placeholder="Uczestnicy"
               name="users"
               value={users}
-              onChange={(event) => handleChangeSelect(event, "users")}
-              onBlur={handleBlur("users")}
+              onChange={handleChangeSelect}
+              onBlur={handleBlur}
               className={s.input}
               error={error.users}
               fullWidth
@@ -161,7 +163,7 @@ const ProjectForm = ({ initialValues, isEdit }: ProjectFormProps) => {
             {/* <FileUploader
               name="files"
               value={files}
-              onChange={(event) => setValues({ ...values, files: [...files, event.target.value] })}
+              onChange={setValues({ ...values, files: [...files, event.target.value] })}
             /> */}
           </div>
         </div>

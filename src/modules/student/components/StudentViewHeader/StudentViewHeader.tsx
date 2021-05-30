@@ -9,13 +9,14 @@ import EditIcon from "app/ui/icons/EditIcon";
 import ExerciseIcon from "app/ui/icons/ExerciseIcon";
 import ProjectIcon from "app/ui/icons/ProjectIcon";
 import clsx from "clsx";
+import Student from "modules/student/types/Student";
 import Router from "next/router";
 import React, { useState } from "react";
 import s from "./StudentViewHeader.module.css";
 
 export interface StudentViewHeaderProps {
-  user: any;
-  tab: any;
+  user: Student;
+  tab: string;
   onChangeTab: (tabName: string) => void;
 }
 
@@ -24,7 +25,7 @@ const deleteUser = () => {};
 const StudentViewHeader = ({ user, tab, onChangeTab }: StudentViewHeaderProps) => {
   const [open, setOpen] = useState(false);
 
-  const { id, name, type } = user ?? {};
+  const { id, name } = user ?? {};
 
   const getTabClassName = (tabName: string) => clsx(s.tab, { [s.tabActive]: tabName === tab });
   const getTextColor = (tabName: string) => (tabName === tab ? "inherit" : "grey");

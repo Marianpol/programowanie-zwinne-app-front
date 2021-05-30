@@ -1,6 +1,7 @@
 import clsx from "clsx";
 import { useRouter } from "next/router";
 import React, { ReactNode } from "react";
+import PageHeader from "../PageHeader";
 import s from "./Layout.module.css";
 
 export interface LayoutProps {
@@ -14,7 +15,10 @@ const Layout = ({ children }: LayoutProps) => {
   });
   return (
     <div className={s.root}>
-      <div className={contentClassName}>{children}</div>
+      <div className={contentClassName}>
+        <PageHeader />
+        {children}
+      </div>
     </div>
   );
 };

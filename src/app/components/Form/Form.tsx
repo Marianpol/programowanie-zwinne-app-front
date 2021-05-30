@@ -1,9 +1,9 @@
 import clsx from "clsx";
-import React, { ReactNode } from "react";
+import React, { ChangeEvent, ReactNode } from "react";
 import s from "./Form.module.css";
 
 export interface FormProps {
-  onSubmit: (event: any) => void;
+  onSubmit: (event: ChangeEvent<HTMLFormElement>) => void;
   children: ReactNode;
   className?: string;
 }
@@ -11,7 +11,7 @@ export interface FormProps {
 const Form = ({ children, onSubmit, className }: FormProps) => {
   const rootClassName = clsx(s.root, className);
 
-  const handleSubmit = (event: any) => {
+  const handleSubmit = (event: ChangeEvent<HTMLFormElement>) => {
     onSubmit && onSubmit(event);
   };
 

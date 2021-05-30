@@ -6,20 +6,17 @@ import Input from "app/ui/components/Input";
 import Text from "app/ui/components/Text";
 import Textarea from "app/ui/components/Textarea";
 import Exercise from "modules/exercise/types/Exercise";
-import React, { useState } from "react";
+import React, { ChangeEvent, useState } from "react";
 import s from "./ExerciseForm.module.css";
 
 export interface ExerciseFormProps {
-  initialValues?: Exercise;
+  initialValues: Exercise;
+  onSubmit: (values: Exercise) => void;
   isEdit?: boolean;
 }
 
-const ExerciseForm = ({ initialValues, isEdit }: ExerciseFormProps) => {
-  const [values, setValues] = useState<Pick<Exercise, "name" | "description">>({
-    name: "",
-    description: "",
-    ...initialValues,
-  });
+const ExerciseForm = ({ initialValues, onSubmit, isEdit }: ExerciseFormProps) => {
+  const [values, setValues] = useState<Exercise>(initialValues);
 
   const [error, setError] = useState({
     name: false,
@@ -28,7 +25,7 @@ const ExerciseForm = ({ initialValues, isEdit }: ExerciseFormProps) => {
 
   const { name, description } = values;
 
-  const handleSubmit = (event: any) => {
+  const handleSubmit = (event: ChangeEvent<HTMLFormElement>) => {
     event.preventDefault();
     setError({
       name: !name.length,
@@ -36,14 +33,19 @@ const ExerciseForm = ({ initialValues, isEdit }: ExerciseFormProps) => {
     });
 
     if (name.length && description.length) {
-      console.log(values);
+      onSubmit && onSubmit(values);
     }
   };
 
-  const handleChange = (event: any, type: string) =>
-    setValues({ ...values, [type]: event.target.value });
+  const handleChange = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const name = event.target.name;
+    setValues({ ...values, [name]: event.target.value });
+  };
 
-  const handleBlur = (type: string) => () => setError({ ...error, [type]: !values[type].length });
+  const handleBlur = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => () => {
+    const name = event.target.name;
+    setError({ ...error, [name]: !values[name as keyof Exercise].length });
+  };
 
   return (
     <Card>
@@ -59,8 +61,8 @@ const ExerciseForm = ({ initialValues, isEdit }: ExerciseFormProps) => {
           placeholder="Nazwa zadania"
           label="Nazwa zadania"
           value={name}
-          onChange={(event) => handleChange(event, "name")}
-          onBlur={handleBlur("name")}
+          onChange={handleChange}
+          onBlur={handleBlur}
           className={s.input}
           error={error.name}
           fullWidth
@@ -75,8 +77,8 @@ const ExerciseForm = ({ initialValues, isEdit }: ExerciseFormProps) => {
           placeholder="Opis zadania"
           label="Opis zadania"
           value={description}
-          onChange={(event) => handleChange(event, "description")}
-          onBlur={handleBlur("description")}
+          onChange={handleChange}
+          onBlur={handleBlur}
           className={s.input}
           error={error.description}
           fullWidth

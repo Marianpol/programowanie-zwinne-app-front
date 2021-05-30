@@ -5,22 +5,31 @@ import Dialog from "app/ui/components/Dialog";
 import Text from "app/ui/components/Text";
 import DeleteIcon from "app/ui/icons/DeleteIcon";
 import EditIcon from "app/ui/icons/EditIcon";
+import axios from "axios";
 import Exercise from "modules/exercise/types/Exercise";
 import Router from "next/router";
 import React, { useState } from "react";
+import { toast } from "react-toastify";
 import s from "./ExerciseViewInfo.module.css";
 
 export interface ExerciseViewInfoProps {
-  exercise: Exercise;
+  exercise: Exercise | undefined;
 }
 
-const deleteExercise = () => {};
+const deleteExercise = (id: string | undefined) => () => {
+  return axios
+    .delete(`http://localhost:8080/api/exercise/${id}`)
+    .then(() => {
+      Router.push("/exercises");
+      toast.success("Usunięto zadanie");
+    })
+    .catch((error) => toast.error(error.message));
+};
 
 const ExerciseViewInfo = ({ exercise }: ExerciseViewInfoProps) => {
   const [open, setOpen] = useState(false);
 
-  const { id, name, description } = exercise;
-  const createDate = new Date().toLocaleDateString();
+  const { id, name, description, createDate } = exercise ?? {};
 
   return (
     <Card>
@@ -45,7 +54,7 @@ const ExerciseViewInfo = ({ exercise }: ExerciseViewInfoProps) => {
             <Dialog
               description="Czy na pewno chcesz usunąć zadanie?"
               isOpen={open}
-              onApprove={deleteExercise}
+              onApprove={deleteExercise(id)}
               onClose={() => setOpen(false)}
             />
 
@@ -57,7 +66,7 @@ const ExerciseViewInfo = ({ exercise }: ExerciseViewInfoProps) => {
           </div>
         </div>
 
-        <Text className={s.description}>{description}</Text>
+        <Text>{description}</Text>
       </CardContent>
     </Card>
   );

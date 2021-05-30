@@ -4,10 +4,10 @@ import IBreadcrumbs from "app/layout/types/breadcrumbs";
 import Columns from "app/types/Columns";
 import Student from "modules/student/types/Student";
 import React from "react";
-import mock from "../../mock.json";
+import useSWR from "swr";
 
 export const students_columns: Columns[] = [
-  { label: "Student", accessor: "name", options: { avatarAccessor: "name" } },
+  { label: "Student", accessor: "name" },
   { label: "Numer indeksu", accessor: "indexNumber" },
   { label: "E-mail", accessor: "email" },
   { label: "Stacjonarny", accessor: "fullTimeStudies" },
@@ -19,7 +19,7 @@ const breadcrumbs: IBreadcrumbs[] = [
 ];
 
 const StudentsPage = () => {
-  const students: Student[] = mock.students;
+  const { data: students } = useSWR<Student[]>("http://localhost:8080/api/student");
 
   return (
     <Page title="Lista studentów" breadcrumbs={breadcrumbs}>

@@ -1,7 +1,7 @@
+import Text from "app/ui/components/Text";
 import clsx from "clsx";
 import React, { ReactNode } from "react";
 import s from "./Button.module.css";
-import Text from "app/ui/components/Text";
 
 export interface ButtonProps {
   children?: ReactNode;

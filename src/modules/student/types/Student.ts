@@ -1,5 +1,5 @@
 interface Student {
-  id: string;
+  id?: string;
   name: string;
   indexNumber: string;
   email: string;

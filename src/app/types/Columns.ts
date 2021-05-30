@@ -3,7 +3,6 @@ export default interface Columns {
   accessor: string;
   options?: {
     width?: string;
-    avatarAccessor?: string;
     type?: "label" | "action";
     format?: "date";
   };

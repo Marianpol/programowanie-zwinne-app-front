@@ -1,7 +1,7 @@
 import Table from "app/components/Table";
 import Columns from "app/types/Columns";
 import Card from "app/ui/components/Card";
-import React, { useEffect, useState } from "react";
+import React, { ChangeEvent, useEffect, useState } from "react";
 import EmptyState from "../EmptyState";
 import TablePagination from "../TablePagination";
 import TableSearch from "../TableSearch";
@@ -14,7 +14,7 @@ export interface TableWrapperProps {
   placeholder?: string;
 }
 
-const TableWrapper = ({ data, columns, url, placeholder }: TableWrapperProps) => {
+const TableWrapper = ({ data = [], columns, url, placeholder }: TableWrapperProps) => {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
   const [value, setValue] = useState(data.slice(0, rowsPerPage));
@@ -23,9 +23,9 @@ const TableWrapper = ({ data, columns, url, placeholder }: TableWrapperProps) =>
     setValue(data.slice(rowsPerPage * page, rowsPerPage * (page + 1)));
   }, [data, page, rowsPerPage]);
 
-  const handleSearch = (event: any) => {
+  const handleSearch = (event: ChangeEvent<HTMLInputElement>) => {
     const inputValue = event.target.value.toLowerCase();
-    setValue(data?.filter(({ name }: any) => name.toLowerCase().includes(inputValue)));
+    setValue(data.filter(({ name }: any) => name.toLowerCase().includes(inputValue)));
     setPage(0);
     setRowsPerPage(10);
   };

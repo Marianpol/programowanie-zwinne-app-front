@@ -1,15 +1,16 @@
+import IRegister from "app/types/IRegister";
 import Button from "app/ui/components/Button";
 import Card from "app/ui/components/Card";
 import Input from "app/ui/components/Input";
 import Text from "app/ui/components/Text";
 import Router from "next/router";
-import React, { useState } from "react";
+import React, { ChangeEvent, useState } from "react";
 import ErrorTag from "../ErrorTag";
 import Form from "../Form";
 import s from "./Register.module.css";
 
 const Register = () => {
-  const [values, setValues] = useState<any>({
+  const [values, setValues] = useState<IRegister>({
     name: "",
     surname: "",
     password: "",
@@ -25,7 +26,7 @@ const Register = () => {
 
   const { name, surname, password, repassword } = values;
 
-  const handleSubmit = (event: any) => {
+  const handleSubmit = (event: ChangeEvent<HTMLFormElement>) => {
     event.preventDefault();
     setError({
       name: !name.length,
@@ -39,10 +40,15 @@ const Register = () => {
     }
   };
 
-  const handleChange = (event: any, type: string) =>
-    setValues({ ...values, [type]: event.target.value });
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const name = event.target.name;
+    setValues({ ...values, [name]: event.target.value });
+  };
 
-  const handleBlur = (type: string) => () => setError({ ...error, [type]: !values[type].length });
+  const handleBlur = (event: ChangeEvent<HTMLInputElement>) => () => {
+    const name = event.target.name;
+    setError({ ...error, [name]: !values[name].length });
+  };
 
   return (
     <div className={s.root}>
@@ -58,8 +64,8 @@ const Register = () => {
             placeholder="Imię"
             label="Imię"
             value={name}
-            onChange={(event) => handleChange(event, "name")}
-            onBlur={handleBlur("name")}
+            onChange={handleChange}
+            onBlur={handleBlur}
             error={error.name}
             className={s.input}
             fullWidth
@@ -72,8 +78,8 @@ const Register = () => {
             placeholder="Nazwisko"
             label="Nazwisko"
             value={surname}
-            onChange={(event) => handleChange(event, "surname")}
-            onBlur={handleBlur("surname")}
+            onChange={handleChange}
+            onBlur={handleBlur}
             error={error.surname}
             className={s.input}
             fullWidth
@@ -87,8 +93,8 @@ const Register = () => {
             placeholder="Hasło"
             label="Hasło"
             value={password}
-            onChange={(event) => handleChange(event, "password")}
-            onBlur={handleBlur("password")}
+            onChange={handleChange}
+            onBlur={handleBlur}
             error={error.password}
             className={s.input}
             fullWidth
@@ -102,8 +108,8 @@ const Register = () => {
             placeholder="Powtórz hasło"
             label="Powtórz hasło"
             value={password}
-            onChange={(event) => handleChange(event, "repassword")}
-            onBlur={handleBlur("repassword")}
+            onChange={handleChange}
+            onBlur={handleBlur}
             error={error.repassword}
             className={s.input}
             fullWidth

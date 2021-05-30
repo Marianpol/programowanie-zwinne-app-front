@@ -15,13 +15,9 @@ export interface ProjectViewProps {
 
 const dataExercises = mock.exercises;
 const columnsExercises = exercises_columns;
-const urlExercises = "/exercise";
-const placeholderExercises = "Szukaj zadania...";
 
 const dataStudents = mock.students;
 const columnsStudents = students_columns;
-const urlStudents = "/student";
-const placeholderStudents = "Szukaj studenta...";
 
 const ProjectView = ({ project }: ProjectViewProps) => {
   const [tab, setTab] = useState<ProjectViewTabTypes>("exercises");
@@ -41,16 +37,17 @@ const ProjectView = ({ project }: ProjectViewProps) => {
           <TableWrapper
             data={dataExercises}
             columns={columnsExercises}
-            url={urlExercises}
-            placeholder={placeholderExercises}
+            url="/exercise"
+            placeholder="Szukaj zadania..."
           />
         ) : null}
+
         {tab === "users" ? (
           <TableWrapper
             data={dataStudents}
             columns={columnsStudents}
-            url={urlStudents}
-            placeholder={placeholderStudents}
+            url="/student"
+            placeholder="Szukaj studenta..."
           />
         ) : null}
         {tab === "files" ? <ProjectViewFiles files={project.files} /> : null}

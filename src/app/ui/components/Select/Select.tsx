@@ -1,12 +1,12 @@
 import clsx from "clsx";
-import React, { ReactNode } from "react";
+import React, { ChangeEvent, ReactNode } from "react";
 import s from "./Select.module.css";
 
 export interface SelectProps {
   name: string;
-  value?: any;
-  onChange?: (event: any) => void;
-  onBlur?: (event: any) => void;
+  value?: string | number;
+  onChange?: (event: ChangeEvent<HTMLSelectElement>) => void;
+  onBlur?: (event: ChangeEvent<HTMLSelectElement>) => void;
   placeholder?: string;
   className?: string;
   error?: boolean;

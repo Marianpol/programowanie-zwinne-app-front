@@ -1,12 +1,11 @@
 import clsx from "clsx";
-import React from "react";
+import React, { ChangeEvent } from "react";
 import s from "./FileUploader.module.css";
 
 export interface FileUploaderProps {
   name: string;
   value: any;
-  onChange: (event: any) => void;
-  className?: string;
+  onChange: (event: ChangeEvent<HTMLInputElement>) => void;
   label?: string;
   fullWidth?: boolean;
   required?: boolean;
@@ -17,7 +16,6 @@ const FileUploader = ({
   value,
   onChange,
   label,
-  className,
   fullWidth,
   required,
   ...props

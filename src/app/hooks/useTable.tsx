@@ -1,4 +1,3 @@
-import firstLetters from "app/libs/firstLetters";
 import Columns from "app/types/Columns";
 import Avatar from "app/ui/components/Avatar";
 import Label from "app/ui/components/Label";
@@ -18,21 +17,16 @@ const useTable = ({ data, columns, url }: { data: any[]; columns: Columns[]; url
 
   const headers = columns;
 
-  const getValue = ({ row, cell }: { row: any; cell: Columns }) => {
+  const getValue = ({ row, cell, key }: { row: any; cell: Columns; key: number }) => {
     if (cell.options?.type === "label") return <Label status={row.data[cell.accessor]} />;
-    // if (cell.options?.format === "date") return row.data[cell.accessor].toLocaleDateString();
-    if (cell.options?.format === "date") return new Date().toLocaleDateString();
+    if (cell.options?.format === "date") {
+      return new Date(row.data[cell.accessor]).toLocaleString();
+    }
     if (cell.accessor === "name") {
-      const avatarAccessor =
-        typeof row.data[cell.options?.avatarAccessor ?? ""] === "string"
-          ? row.data[cell.options?.avatarAccessor ?? ""]
-          : "-";
-      const avatarLabel = firstLetters(avatarAccessor ?? "-");
-
       return (
         <div style={{ display: "flex", alignItems: "center" }}>
           <Avatar color="secondary" style={avatarStyle}>
-            {avatarLabel}
+            {key + 1}
           </Avatar>
           <Link href={`${url}/${row.data.id}`}>{row.data[cell.accessor]}</Link>
         </div>

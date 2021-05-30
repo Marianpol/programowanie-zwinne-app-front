@@ -1,6 +1,7 @@
 import ButtonIcon from "app/ui/components/ButtonIcon";
 import Card from "app/ui/components/Card";
 import CardContent from "app/ui/components/CardContent";
+import Dialog from "app/ui/components/Dialog";
 import Text from "app/ui/components/Text";
 import CalendarIcon from "app/ui/icons/CalendarIcon";
 import DeleteIcon from "app/ui/icons/DeleteIcon";
@@ -8,18 +9,27 @@ import EditIcon from "app/ui/icons/EditIcon";
 import ProjectIcon from "app/ui/icons/ProjectIcon";
 import StatusIcon from "app/ui/icons/StatusIcon";
 import SubjectIcon from "app/ui/icons/SubjectIcon";
+import axios from "axios";
 import clsx from "clsx";
 import Project from "modules/project/types/Project";
 import Router from "next/router";
 import React, { useState } from "react";
+import { toast } from "react-toastify";
 import s from "./ProjectViewInfo.module.css";
-import Dialog from "app/ui/components/Dialog";
 
 export interface StudentViewInfoProps {
   project: Project;
 }
 
-const deleteProject = () => {};
+const deleteProject = (id: string) => () => {
+  return axios
+    .delete(`http://localhost:8080/api/project/${id}`)
+    .then(() => {
+      Router.push("/projects");
+      toast.success("Usunięto zadanie");
+    })
+    .catch((error) => toast.error(error.message));
+};
 
 const ProjectViewInfo = ({ project }: StudentViewInfoProps) => {
   const [open, setOpen] = useState(false);
@@ -44,7 +54,7 @@ const ProjectViewInfo = ({ project }: StudentViewInfoProps) => {
             <Dialog
               description="Czy na pewno chcesz usunąć projekt?"
               isOpen={open}
-              onApprove={deleteProject}
+              onApprove={deleteProject(id)}
               onClose={() => setOpen(false)}
             />
 
@@ -72,7 +82,7 @@ const ProjectViewInfo = ({ project }: StudentViewInfoProps) => {
             <Text upperCase size="small" color="grey">
               Przedmiot
             </Text>
-            <Text>{subject ?? "-"}</Text>
+            <Text>{subject?.name ?? "-"}</Text>
           </div>
         </div>
 

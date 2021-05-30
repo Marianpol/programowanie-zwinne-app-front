@@ -1,8 +1,8 @@
 interface Exercise {
-  id: string;
+  id?: string;
   name: string;
   description: string;
-  createDate: Date | string;
+  createDate?: Date | string;
 }
 
 export default Exercise;

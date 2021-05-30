@@ -1,20 +1,29 @@
 import Page from "app/layout/components/Page";
 import IBreadcrumbs from "app/layout/types/breadcrumbs";
+import axios from "axios";
 import ExerciseForm from "modules/exercise/components/ExerciseForm";
 import Exercise from "modules/exercise/types/Exercise";
-import { useRouter } from "next/router";
+import Router, { useRouter } from "next/router";
 import React, { useMemo } from "react";
-import mock from "../../../../mock.json";
+import { toast } from "react-toastify";
+import useSWR from "swr";
+
+const handleSubmit = (values: Pick<Exercise, "name" | "description">) => {
+  return axios
+    .put("http://localhost:8080/api/exercise", values)
+    .then(({ data: id }) => {
+      Router.push(`/exercise/${id}`);
+      toast.success("Edytowano projekt");
+    })
+    .catch((error) => toast.error(error.message));
+};
 
 const ExerciseEditPage = () => {
   const {
     query: { id },
   } = useRouter();
 
-  const exercise: Exercise = useMemo(
-    () => mock.exercises.find(({ id: exerciseId }) => `${exerciseId}` === id),
-    [id]
-  );
+  const { data: exercise, error } = useSWR<Exercise>(`http://localhost:8080/api/exercise/${id}`);
 
   const { name } = exercise ?? {};
 
@@ -30,9 +39,12 @@ const ExerciseEditPage = () => {
 
   const title = useMemo(() => name ?? "-", [name]);
 
+  if (error) return <div>{error.message}</div>;
+  if (!exercise) return <div>loading...</div>;
+
   return (
     <Page title={title} breadcrumbs={breadcrumbs}>
-      <ExerciseForm isEdit initialValues={exercise} />
+      <ExerciseForm isEdit initialValues={exercise} onSubmit={handleSubmit} />
     </Page>
   );
 };

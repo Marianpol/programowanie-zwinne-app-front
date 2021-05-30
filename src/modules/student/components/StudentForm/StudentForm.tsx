@@ -6,24 +6,16 @@ import Checkbox from "app/ui/components/Checkbox";
 import Input from "app/ui/components/Input";
 import Text from "app/ui/components/Text";
 import Student from "modules/student/types/Student";
-import React, { useState } from "react";
+import React, { ChangeEvent, useState } from "react";
 import s from "./StudentForm.module.css";
 
 export interface StudentFormProps {
-  initialValues?: Student;
+  initialValues: Student;
   isEdit?: boolean;
 }
 
 const StudentForm = ({ initialValues, isEdit }: StudentFormProps) => {
-  const [values, setValues] = useState<
-    Pick<Student, "name" | "indexNumber" | "email" | "fullTimeStudies">
-  >({
-    name: "",
-    indexNumber: "",
-    email: "",
-    fullTimeStudies: false,
-    ...initialValues,
-  });
+  const [values, setValues] = useState<Student>(initialValues);
 
   const [error, setError] = useState({
     name: false,
@@ -33,7 +25,7 @@ const StudentForm = ({ initialValues, isEdit }: StudentFormProps) => {
 
   const { name, indexNumber, email, fullTimeStudies } = values;
 
-  const handleSubmit = (event: any) => {
+  const handleSubmit = (event: ChangeEvent<HTMLFormElement>) => {
     event.preventDefault();
     setError({
       name: !name.length,
@@ -46,10 +38,15 @@ const StudentForm = ({ initialValues, isEdit }: StudentFormProps) => {
     }
   };
 
-  const handleChange = (event: any, type: string) =>
-    setValues({ ...values, [type]: event.target.value });
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const name = event.target.name;
+    setValues({ ...values, [name]: event.target.value });
+  };
 
-  const handleBlur = (type: string) => () => setError({ ...error, [type]: !values[type].length });
+  const handleBlur = (event: ChangeEvent<HTMLInputElement>) => {
+    const name = event.target.name;
+    setError({ ...error, [name]: !values[name].length });
+  };
 
   return (
     <Card>
@@ -65,8 +62,8 @@ const StudentForm = ({ initialValues, isEdit }: StudentFormProps) => {
           placeholder="Imię i nazwisko"
           label="Imię i nazwisko"
           value={name}
-          onChange={(event) => handleChange(event, "name")}
-          onBlur={handleBlur("name")}
+          onChange={handleChange}
+          onBlur={handleBlur}
           className={s.input}
           error={error.name}
           fullWidth
@@ -79,8 +76,8 @@ const StudentForm = ({ initialValues, isEdit }: StudentFormProps) => {
           placeholder="Numer indeksu"
           label="Numer indeksu"
           value={indexNumber}
-          onChange={(event) => handleChange(event, "indexNumber")}
-          onBlur={handleBlur("indexNumber")}
+          onChange={handleChange}
+          onBlur={handleBlur}
           className={s.input}
           error={error.indexNumber}
           fullWidth
@@ -93,8 +90,8 @@ const StudentForm = ({ initialValues, isEdit }: StudentFormProps) => {
           placeholder="E-mail"
           label="E-mail"
           value={email}
-          onChange={(event) => handleChange(event, "email")}
-          onBlur={handleBlur("email")}
+          onChange={handleChange}
+          onBlur={handleBlur}
           className={s.input}
           error={error.email}
           fullWidth

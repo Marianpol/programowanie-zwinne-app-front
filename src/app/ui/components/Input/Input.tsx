@@ -1,12 +1,12 @@
 import clsx from "clsx";
-import React from "react";
+import React, { ChangeEvent } from "react";
 import s from "./Input.module.css";
 
 export interface InputProps {
   name: string;
-  value?: any;
-  onChange?: (event: any) => void;
-  onBlur?: (event: any) => void;
+  value?: string | number;
+  onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
+  onBlur?: (event: ChangeEvent<HTMLInputElement>) => void;
   type?: "text" | "number" | "password";
   placeholder?: string;
   className?: string;

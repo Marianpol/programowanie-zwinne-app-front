@@ -31,7 +31,7 @@ const Table = ({ data, columns, url, style }: TableProps) => {
               {row.cells.map((cell, index) => {
                 return (
                   <td key={index} className={s.td} style={{ width: cell.options?.width }}>
-                    {getValue({ row, cell })}
+                    {getValue({ row, cell, key: row.key })}
                   </td>
                 );
               })}

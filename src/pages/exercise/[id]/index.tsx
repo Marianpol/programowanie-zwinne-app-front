@@ -4,16 +4,15 @@ import ExerciseView from "modules/exercise/components/ExerciseView";
 import Exercise from "modules/exercise/types/Exercise";
 import { useRouter } from "next/router";
 import React, { useMemo } from "react";
-import mock from "../../../../mock.json";
+import useSWR from "swr";
 
 const ExercisePage = () => {
   const {
     query: { id },
   } = useRouter();
 
-  const exercise: Exercise = useMemo(
-    () => mock.exercises.find(({ id: exerciseId }) => `${exerciseId}` === id),
-    [id]
+  const { data: exercise, error } = useSWR<Exercise>(
+    id ? `http://localhost:8080/api/exercise/${id}` : null
   );
 
   const { name } = exercise ?? {};
@@ -28,6 +27,9 @@ const ExercisePage = () => {
   );
 
   const title = useMemo(() => name ?? "-", [name]);
+
+  if (error) return <div>{error.message}</div>;
+  if (!exercise) return <div>loading...</div>;
 
   return (
     <Page title={title} breadcrumbs={breadcrumbs}>

@@ -1,21 +1,15 @@
 import TableWrapper from "app/components/TableWrapper";
 import Exercise from "modules/exercise/types/Exercise";
-import { formatProjectsData, projects_columns } from "pages/projects";
+import { projects_columns } from "pages/projects";
 import React from "react";
-import mock from "../../../../../mock.json";
 import ExerciseViewInfo from "../ExerciseViewInfo";
 import s from "./ExerciseView.module.css";
 
 export interface ExerciseViewProps {
-  exercise: Exercise;
+  exercise: Exercise | undefined;
 }
 
 const ExerciseView = ({ exercise }: ExerciseViewProps) => {
-  const data = formatProjectsData(mock.projects);
-  const columns = projects_columns;
-  const url = "/project";
-  const placeholder = "Szukaj projektu...";
-
   return (
     <div className={s.root}>
       <div className={s.leftSide}>
@@ -23,7 +17,12 @@ const ExerciseView = ({ exercise }: ExerciseViewProps) => {
       </div>
 
       <div className={s.rightSide}>
-        <TableWrapper data={data} columns={columns} url={url} placeholder={placeholder} />
+        <TableWrapper
+          data={[]}
+          columns={projects_columns}
+          url="/project"
+          placeholder="Szukaj projektu..."
+        />
       </div>
     </div>
   );
