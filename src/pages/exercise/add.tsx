@@ -14,7 +14,7 @@ const breadcrumbs: IBreadcrumbs[] = [
 
 const handleSubmit = (values: Pick<Exercise, "name" | "description">) => {
   return axios
-    .post("http://localhost:8080/api/exercise", values)
+    .post(process.env.SERVER_URL + ':' + process.env.PORT +"/api/exercise", values)
     .then(({ data: id }) => {
       Router.push(`/exercise/${id}`);
       toast.success("Dodano projekt");

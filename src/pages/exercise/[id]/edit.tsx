@@ -10,7 +10,7 @@ import useSWR from "swr";
 
 const handleSubmit = (values: Pick<Exercise, "name" | "description">) => {
   return axios
-    .put("http://localhost:8080/api/exercise", values)
+    .put(process.env.SERVER_URL + ':' + process.env.PORT + "/api/exercise", values)
     .then(({ data: id }) => {
       Router.push(`/exercise/${id}`);
       toast.success("Edytowano projekt");
@@ -23,7 +23,7 @@ const ExerciseEditPage = () => {
     query: { id },
   } = useRouter();
 
-  const { data: exercise, error } = useSWR<Exercise>(`http://localhost:8080/api/exercise/${id}`);
+  const { data: exercise, error } = useSWR<Exercise>(process.env.SERVER_URL + ':' + process.env.PORT +`/api/exercise/${id}`);
 
   const { name } = exercise ?? {};
 

@@ -16,7 +16,7 @@ const ProjectPage = () => {
     query: { id },
   } = useRouter();
 
-  const { data: project, error } = useSWR(id ? `http://localhost:8080/api/project/${id}` : null);
+  const { data: project, error } = useSWR(id ? process.env.SERVER_URL + ':' + process.env.PORT +`/api/project/${id}` : null);
 
   const { name } = project ?? {};
 

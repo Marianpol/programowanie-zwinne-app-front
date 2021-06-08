@@ -23,7 +23,7 @@ export interface StudentViewInfoProps {
 
 const deleteProject = (id: string) => () => {
   return axios
-    .delete(`http://localhost:8080/api/project/${id}`)
+    .delete(process.env.SERVER_URL + ':' + process.env.PORT +`/api/project/${id}`)
     .then(() => {
       Router.push("/projects");
       toast.success("Usunięto zadanie");

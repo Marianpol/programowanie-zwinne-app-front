@@ -9,7 +9,7 @@ import { toast } from "react-toastify";
 
 const handleSubmit = (data: Project) => {
   return axios
-    .post("http://localhost:8080/api/project", data)
+    .post(process.env.SERVER_URL + ':' + process.env.PORT +"/api/project", data)
     .then(({ data: id }) => {
       Router.push(`/project/${id}`);
       toast.success("Dodano projekt");

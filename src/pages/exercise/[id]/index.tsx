@@ -12,7 +12,7 @@ const ExercisePage = () => {
   } = useRouter();
 
   const { data: exercise, error } = useSWR<Exercise>(
-    id ? `http://localhost:8080/api/exercise/${id}` : null
+    id ? process.env.SERVER_URL + ':' + process.env.PORT +`/api/exercise/${id}` : null
   );
 
   const { name } = exercise ?? {};

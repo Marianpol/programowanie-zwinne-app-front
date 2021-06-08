@@ -18,7 +18,7 @@ const breadcrumbs: IBreadcrumbs[] = [
 ];
 
 const ExercisesPage = () => {
-  const { data: exercises, error } = useSWR<Exercise[]>("http://localhost:8080/api/exercise");
+  const { data: exercises, error } = useSWR<Exercise[]>(process.env.SERVER_URL + ':' + process.env.PORT +"/api/exercise");
 
   if (error) return <div>failed to load</div>;
   if (!exercises) return <div>loading...</div>;

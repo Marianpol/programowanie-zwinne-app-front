@@ -12,7 +12,7 @@ import useSWR from "swr";
 
 const handleSubmit = (values: Project) => {
   return axios
-    .put("http://localhost:8080/api/project", values)
+    .put(process.env.SERVER_URL + ':' + process.env.PORT +"/api/project", values)
     .then(({ data: id }) => {
       Router.push(`/exercise/${id}`);
       toast.success("Edytowano projekt");
@@ -32,7 +32,7 @@ const ProjectEditPage = () => {
     query: { id },
   } = useRouter();
 
-  const { data, error } = useSWR<Project>(`http://localhost:8080/api/project/${id}`);
+  const { data, error } = useSWR<Project>(process.env.SERVER_URL + ':' + process.env.PORT +`/api/project/${id}`);
 
   const project = data ? formatData(data) : undefined;
 

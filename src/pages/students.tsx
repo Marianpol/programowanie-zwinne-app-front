@@ -19,7 +19,7 @@ const breadcrumbs: IBreadcrumbs[] = [
 ];
 
 const StudentsPage = () => {
-  const { data: students } = useSWR<Student[]>("http://localhost:8080/api/student");
+  const { data: students } = useSWR<Student[]>(process.env.SERVER_URL + ':' + process.env.PORT +"/api/student");
 
   return (
     <Page title="Lista studentów" breadcrumbs={breadcrumbs}>

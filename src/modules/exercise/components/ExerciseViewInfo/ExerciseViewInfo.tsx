@@ -18,7 +18,7 @@ export interface ExerciseViewInfoProps {
 
 const deleteExercise = (id: string | undefined) => () => {
   return axios
-    .delete(`http://localhost:8080/api/exercise/${id}`)
+    .delete(process.env.SERVER_URL + ':' + process.env.PORT +`/api/exercise/${id}`)
     .then(() => {
       Router.push("/exercises");
       toast.success("Usunięto zadanie");

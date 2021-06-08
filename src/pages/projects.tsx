@@ -25,7 +25,7 @@ export const formatProjectsData = (data: Project[]) =>
   }));
 
 const ProjectsPage = () => {
-  const { data: projects, error } = useSWR<Project[]>("http://localhost:8080/api/project");
+  const { data: projects, error } = useSWR<Project[]>(process.env.SERVER_URL + ':' + process.env.PORT +"/api/project");
 
   if (error) return <div>{error.message}</div>;
   if (!projects) return <div>loading...</div>;

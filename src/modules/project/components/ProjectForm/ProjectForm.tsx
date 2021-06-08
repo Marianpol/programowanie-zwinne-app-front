@@ -67,7 +67,7 @@ const ProjectForm = ({ initialValues, isEdit, onSubmit }: ProjectFormProps) => {
     }
   };
 
-  const { data: subjects = [] } = useSWR("http://localhost:8080/api/subject");
+  const { data: subjects = [] } = useSWR(process.env.SERVER_URL + ':' + process.env.PORT + "/api/subject");
 
   return (
     <Card>
